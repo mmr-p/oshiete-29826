@@ -30,6 +30,7 @@ Things you may want to cover:
 | Column         | Type   | Options     |
 | -------------- | ------ | ----------- |
 | name           | string | null: false |
+| name_kana      | string | null: false |
 | employee_id    | string | null: false |
 | password       | string | null: false |
 
