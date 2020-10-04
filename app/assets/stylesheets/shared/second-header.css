@@ -1,0 +1,15 @@
+.lists-center {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.center-list {
+  text-decoration: none;
+  margin-right: 15px;
+  color: #98605e;
+}
+
+.center-list:hover {
+  background: linear-gradient(transparent 50%, #f5b2b2 70%);
+}
