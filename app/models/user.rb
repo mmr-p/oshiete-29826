@@ -6,9 +6,9 @@ class User < ApplicationRecord
   has_many :restaurants
 
   with_options presence: true do
-    validates :name,        format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' }
-    validates :name_kana,   format: { with: /\A[ァ-ヶー－]+\z/, message: 'Full-width katakana characters' }
-    validates :employee_id, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers' }
+    validates :name,        format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'の入力が正しくありません' }
+    validates :name_kana,   format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナで入力してください' }
+    validates :employee_id, format: { with: /\A[0-9]+\z/, message: 'は半角で入力してください' }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は英数字混合で入力してください' }
   end
 end
