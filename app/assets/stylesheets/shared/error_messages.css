@@ -1,0 +1,15 @@
+.err-messages {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  list-style: none;
+  color: red;
+  font-size: 12px;
+  margin-bottom: 1px;
+}
+
+.login-flash-message {
+  color: red;
+  font-size: 12px;
+}
