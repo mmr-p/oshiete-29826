@@ -5,3 +5,4 @@ ja:
        name: 姓名
        name_kana: フリガナ
        employee_id: 従業員ID
+       password_confirmation: 確認用パスワード
