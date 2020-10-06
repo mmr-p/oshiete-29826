@@ -61,7 +61,7 @@
           <label class="info-text">キャプション</label>
           <div class="notes">味の感想やサービスの質、客層などを共有しよう</div>
         </div>
-        <%= f.text_field :description, class:"form-space-large" %>
+        <%= f.text_area :description, class:"form-space-large" %>
       </div>
 
       <%# 電話番号 %>
@@ -86,7 +86,7 @@
         <div>
           <label class="info-text">営業時間</label>
         </div>
-        <%= f.text_field :opening_hour, class:"form-space-large" %>
+        <%= f.text_area :opening_hour, class:"form-space-large" %>
       </div>
 
       <%# 定休日 %>
@@ -94,7 +94,7 @@
         <div>
           <label class="info-text">定休日</label>
         </div>
-        <%= f.text_field :closed, class:"form-space-large" %>
+        <%= f.text_area :closed, class:"form-space-large" %>
       </div>
 
       <div class="actions">

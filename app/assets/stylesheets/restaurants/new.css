@@ -42,13 +42,18 @@
 }
 
 .form-space-large {
-  height: 40px;
   width: 100%;
-  resize: vertical;
   font-size: 15px;
+  resize: vertical;
   background-color: #ffffff;
   border: darkgray solid 1px;
   margin: 5px 0 25px;
-  padding: 10px 16px 8px;
+  padding: 16px 16px 8px;
   border-radius:5px;
+}
+
+.form-space-large:focus {
+  box-shadow: 0px 0px 5px 2px #f5b2b2;
+  border: #f19ca7;
+  outline: none;
 }
