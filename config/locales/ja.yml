@@ -1,8 +1,19 @@
 ja:
- activerecord:
-   attributes:
-     user:
-       name: 姓名
-       name_kana: フリガナ
-       employee_id: 従業員ID
-       password_confirmation: 確認用パスワード
+  activerecord:
+    attributes:
+      user:
+        name:                   姓名
+        name_kana:              フリガナ
+        employee_id:            従業員ID
+        password_confirmation:  確認用パスワード
+      restaurant:
+        name:                   お店の名前
+        description:            キャプション
+        image:                  写真
+        tel:                    電話番号
+        address:                住所
+        opening_hour:           営業時間
+        closed:                 定休日
+        genre_id:               カテゴリー
+        ambiance_id:            お店の雰囲気
+        price_id:               価格帯
