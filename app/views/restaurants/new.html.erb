@@ -1,0 +1,109 @@
+<%# CSS・・・assets/stylesheets/restaurants/new.css %>
+<div class="registration-background">
+  <div class="post-panel">
+
+    <%= form_with model: @restaurant, class: 'registration-main', local: true do |f| %>
+      <h1>おいしいを教える</h1>
+
+      <%# エラーメッセージ表示 %>
+      <%= render "shared/error_messages", model: @restaurant %>
+
+      <%# 写真選択 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">写真</label>
+          <div class="notes">外観やメニュー、料理の写真などを共有しよう</div>
+        </div>
+        <%= f.file_field :image, class:"image-form" %>
+      </div>
+
+      <%# 店名 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">お店の名前</label>
+        </div>
+        <%= f.text_field :name, class:"form-space" %>
+      </div>
+
+      <%# カテゴリー %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">カテゴリー</label>
+        </div>
+        <div class="select-wrap">
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+      </div>
+
+      <%# 雰囲気 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">お店の雰囲気</label>
+        </div>
+        <div class="select-wrap">
+          <%= f.collection_select(:ambiance_id, Ambiance.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+      </div>
+
+      <%# 価格帯 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">価格帯</label>
+        </div>
+        <div class="select-wrap">
+          <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+      </div>
+
+      <%# 店舗説明 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">キャプション</label>
+          <div class="notes">味の感想やサービスの質、客層などを共有しよう</div>
+        </div>
+        <%= f.text_area :description, class:"form-space-large" %>
+      </div>
+
+      <%# 電話番号 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">お店の電話番号</label>
+          <div class="notes">ハイフンなしの半角入力</div>
+        </div>
+        <%= f.text_field :tel, class:"form-space" %>
+      </div>
+
+      <%# 住所 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">お店の住所</label>
+        </div>
+        <%= f.text_field :address, class:"form-space" %>
+      </div>
+
+      <%# 営業時間 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">営業時間</label>
+        </div>
+        <%= f.text_area :opening_hour, class:"form-space-large" %>
+      </div>
+
+      <%# 定休日 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">定休日</label>
+        </div>
+        <%= f.text_area :closed, class:"form-space-large" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "投稿する", class:"register-btn" %>
+      </div>
+
+      <div class="actions">
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

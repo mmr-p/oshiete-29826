@@ -1,0 +1,10 @@
+.index-main {
+  background-color: #fef4f4;
+}
+
+.eat-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
