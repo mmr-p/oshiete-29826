@@ -82,7 +82,7 @@ RSpec.describe Restaurant, type: :model do
       @restaurant.valid?
       expect(@restaurant.errors.full_messages).to include('電話番号の入力が正しくありません')
     end
-    
+
     it '住所が入力されていなければ投稿できない' do
       @restaurant.address = nil
       @restaurant.valid?

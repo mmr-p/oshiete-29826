@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login
-  
+
   def top
   end
 
   def index
-    @restaurants = Restaurant.order("created_at DESC")
+    @restaurants = Restaurant.order('created_at DESC')
   end
 
   def new
@@ -26,7 +26,7 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id,
-          :price_id, :tel, :address, :opening_hour, :closed, :image).merge(user_id: current_user.id)
+                                       :price_id, :tel, :address, :opening_hour, :closed, :image).merge(user_id: current_user.id)
   end
 
   def move_to_login
