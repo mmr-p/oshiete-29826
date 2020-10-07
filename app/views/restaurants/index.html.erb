@@ -5,19 +5,17 @@
 <div class="restaurant-page">
 <%# 左のエリア %>
   <div class="left-side-restaurant">
-    <div class="left-child">
-    </div>
   </div>
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
     <h2 class="right-side-header">カフェ・レストラン一覧</h2>
     <% @restaurants.each do |restaurant| %>
-      <div class="restaurant-lists">
-        <li>
+      <li>
+        <div class="restaurant-lists">
           <div class="restaurant-image">
-            <%= link_to restaurants_path(restaurant.id) do %>
-              <%= image_tag restaurant.image, class:"restaurant-img" %>
+            <%= link_to restaurant_path(restaurant.id) do %>
+              <%= image_tag restaurant.image.variant(resize: '280x280'), class:"restaurant-img" %>
             <% end %>
           </div>
           <div class="restaurant-info">
@@ -25,13 +23,14 @@
               <%= restaurant.name %>
             </h3>
             <div class="restaurant-genre">
-              <div class="genre-icon"></div>
-              <div class="genre-name"><%= restaurant.genre.name %></div>
+              <div class="genre-name">
+                <i class="fas fa-utensils"></i><%= restaurant.genre.name %>
+              </div>
             </div>
-            <div class="restaurant-closed"><%= restaurant.closed %></div>
+            <div class="restaurant-closed"><%= "定休日：#{restaurant.closed}" %></div>
           </div>
-        </li>
-      </div>
+        </div>
+      </li>
     <% end %>
   </div>
 </div>
