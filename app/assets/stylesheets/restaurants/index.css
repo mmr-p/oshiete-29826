@@ -1,0 +1,58 @@
+.restaurant-page {
+  height: auto;
+  background-color: #fef4f4;
+  display: flex;
+  margin-top: 20px;
+  padding: 0 50px;
+}
+
+.left-side-restaurant {
+  width: 25%;
+  height: auto;
+  background-color: #ffffff;
+  margin: 10px 35px;
+}
+
+.right-side-restaurant {
+  width: 75%;
+  height: 100%;
+  background-color: #fef4f4;
+  overflow: scroll;
+}
+
+.right-side-header {
+  font-size: 30px;
+  margin: 37px 0 18px;
+  color: #98605e;
+}
+
+li {
+  list-style: none;
+}
+
+.restaurant-lists {
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 15px 40px;
+
+  display: flex;
+}
+
+.restaurant-info {
+  margin-left: 30px;
+}
+
+.restaurant-name {
+  font-size: 43px;
+  padding-bottom: 25px;
+}
+
+.genre-name {
+  color: #949495;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.restaurant-closed {
+
+}
