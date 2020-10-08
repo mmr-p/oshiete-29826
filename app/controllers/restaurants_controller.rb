@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    render :show unless current_user == @restaurant.user
+    render :show unless current_user == @restaurant.user || current_user.admin?
   end
 
   def update
