@@ -5,7 +5,7 @@
 <div class="restaurant-show-page">
   <div class="show-header">
     <p class="show-name"><%= @restaurant.name %></p>
-    <% if current_user.id == @restaurant.user_id %>
+    <% if current_user.id == @restaurant.user_id || current_user.admin? %>
       <%= link_to '編集する', edit_restaurant_path(@restaurant.id), class:"edit-btn" %>
       <%= link_to '削除する', restaurant_path(@restaurant.id), method: :delete, class:"edit-btn", data: {confirm: "削除しますか？"} %>
     <% end %>
