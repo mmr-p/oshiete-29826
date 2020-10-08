@@ -1,9 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login
-  before_action :set_item, only: [:show, :edit, :update]
-
-  def top
-  end
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.order('created_at DESC')
@@ -35,6 +32,14 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @restaurant.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
