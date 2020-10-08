@@ -6,7 +6,7 @@
   <div class="show-header">
     <p class="show-name"><%= @restaurant.name %></p>
     <% if current_user.id == @restaurant.user_id %>
-      <%= link_to '編集する', '#', method: :get, class:"edit-btn" %>
+      <%= link_to '編集する', edit_restaurant_path(@restaurant.id), method: :get, class:"edit-btn" %>
     <% end %>
   </div>
   <div class="show-child">
