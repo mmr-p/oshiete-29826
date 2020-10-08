@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login
+  before_action :set_item, only: [:show, :edit, :update]
 
   def top
   end
@@ -23,10 +24,25 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def edit
+    render :show unless current_user == @restaurant.user
+  end
+
+  def update
+    if @restaurant.update(restaurant_params)
+      redirect_to restaurant_path
+    else
+      render :edit
+    end
   end
 
   private
+
+  def set_item
+    @restaurant = Restaurant.find(params[:id])
+  end
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id,

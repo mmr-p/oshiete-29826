@@ -20,7 +20,7 @@
           </div>
           <div class="restaurant-info">
             <h3 class="restaurant-name">
-              <%= restaurant.name %>
+              <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
             </h3>
             <div class="restaurant-genre">
               <div class="genre-name">

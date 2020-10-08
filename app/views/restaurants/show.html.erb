@@ -1,1 +1,101 @@
-<h1>Show</h1>
+<%# CSS・・・assets/stylesheets/restaurants/show.css %>
+<%= render 'shared/header' %>
+<%= render 'shared/second-header' %>
+
+<div class="restaurant-show-page">
+  <div class="show-header">
+    <p class="show-name"><%= @restaurant.name %></p>
+    <% if current_user.id == @restaurant.user_id %>
+      <%= link_to '編集する', edit_restaurant_path(@restaurant.id), method: :get, class:"edit-btn" %>
+    <% end %>
+  </div>
+  <div class="show-child">
+    <div class="show-list">
+      <ul class="show-sammary">
+        <li class="show-title">
+          ジャンル：
+        </li>
+        <li class="show-content">
+          <%= @restaurant.genre.name %>
+        </li>
+      </ul>
+      <ul class="show-sammary">
+        <li class="show-title">
+          雰囲気：
+        </li>
+        <li class="show-content">
+          <%= @restaurant.ambiance.name %>
+        </li>
+      </ul>
+      <ul class="show-sammary">
+        <li class="show-title">
+          予算：
+        </li>
+        <li class="show-content">
+          <%= @restaurant.price.name %>
+        </li>
+      </ul>
+    </div>
+    <%= link_to @restaurant.image, "data-lightbox" => @restaurant.image do %>
+      <%= image_tag @restaurant.image.variant(resize: '600x600') %>
+    <% end %>
+    <p class="show-description"><%= @restaurant.description %></p>
+
+    <table class="info-table">
+      <caption><%= "#{@restaurant.name}の店舗情報" %></caption>
+      <tr>
+        <th class="genre-table">ジャンル</th><td><%= @restaurant.genre.name %></td>
+      </tr>
+      <tr>
+        <th>雰囲気</th><td><%= @restaurant.ambiance.name %></td>
+      </tr>
+      <tr>
+        <th class="hour-table">営業時間</th><td><%= @restaurant.opening_hour %></td>
+      </tr>
+      <tr>
+        <th class="closed-table">定休日</th><td><%= @restaurant.closed %></td>
+      </tr>
+      <tr>
+        <th class="genre-address">住所</th><td><%= @restaurant.address %></td>
+      </tr>
+      <tr>
+        <th class="genre-tel">電話番号</th><td><%= @restaurant.tel %></td>
+      </tr>
+      <tr>
+        <th class="genre-web">ホームページ</th><td><%# ホームページ情報（任意）を追加したら実装する %></td>
+      </tr>
+      <tr>
+        <th class="genre-parking">駐車場</th><td><%# 駐車場情報（任意）を追加したら実装する %></td>
+      </tr>
+      <tr>
+        <th class="genre-others">備考</th><td><%# 備考情報（任意）を追加したら実装する %></td>
+      </tr>
+    </table>
+
+<%# ！！！！！！！コメント投稿機能実装後に完成させる！！！！！！ %>
+    <%#<div class="comment-area"> %>
+      <%#= form_with(model: [@restaurant, @comment], local: true) do |f| %>
+        <%#= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field" %>
+        <%#= f.submit "コメントする", class:"口コミ" %>
+      <%# end %>
+    <%#</div>
+    <div class="comments"> %>
+      <%# if @comments %>
+        <%# @comments.each do |comment| %>
+        <%#<div class="comment-left">
+          <p class="comment-user-name"><%= comment.user.name %><%#</p>
+          <p class="comment-text"><%= comment.content %><%#</p>
+        </div>
+        <% if comment.image %>
+          <%#<div class="comment-right">
+          <%= link_to comment.image, "data-lightbox" => comment.image do %>
+            <%#= image_tag comment.image.variant(resize: '150x150') %>
+          <%# end %>
+          <%#</div>
+        <% end %>
+      <%# end %>
+    <%#</div> %>
+<%# ！！！！！！！コメント投稿機能実装後に完成させる！！！！！！ %>
+
+  </div>
+</div>
