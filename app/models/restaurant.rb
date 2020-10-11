@@ -4,8 +4,9 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :ambiance
   belongs_to_active_hash :price
 
-  belongs_to :user
+  belongs_to       :user
   has_one_attached :image
+  has_many         :comments, dependent: :destroy
 
   with_options presence: true do
     validates :name
