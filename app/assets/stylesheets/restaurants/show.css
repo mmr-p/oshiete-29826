@@ -55,3 +55,8 @@
 .table-records {
   padding: 20px 0;
 }
+
+.map {
+  height: 400px;
+  width: 520px;
+}

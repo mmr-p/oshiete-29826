@@ -27,13 +27,14 @@ Things you may want to cover:
 
 ## usersテーブル
 
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| name           | string | null: false |
-| name_kana      | string | null: false |
-| employee_id    | string | null: false |
-| email          | string | null: false |
-| password       | string | null: false |
+| Column         | Type    | Options        |
+| -------------- | ------- | -------------- |
+| name           | string  | null: false    |
+| name_kana      | string  | null: false    |
+| employee_id    | string  | null: false    |
+| email          | string  | null: false    |
+| password       | string  | null: false    |
+| admin          | boolean | default: false |
 
 ## Association
 
@@ -57,6 +58,8 @@ Things you may want to cover:
 | opening_hour   | string    | null: false                    |
 | closed         | string    | null: false                    |
 | user           | reference | null: false, foreign_key: true |
+| latitude       | float     | null: true                     |
+| longitude      | float     | null: true                     |
 
 ## Association
 

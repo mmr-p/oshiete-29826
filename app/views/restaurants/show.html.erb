@@ -58,7 +58,13 @@
         <th class="closed-table">定休日</th><td><%= @restaurant.closed %></td>
       </tr>
       <tr>
-        <th class="genre-address">住所</th><td><%= @restaurant.address %></td>
+        <th class="genre-address">住所</th>
+        <td><%= @restaurant.address %><br>
+            <div class="map" id="map"></div>
+            <%= javascript_tag do %>
+              window.address = <%= raw @restaurant.address.to_json %>
+            <% end %>
+        </td>
       </tr>
       <tr>
         <th class="genre-tel">電話番号</th><td><%= @restaurant.tel %></td>
