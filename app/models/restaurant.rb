@@ -26,4 +26,7 @@ class Restaurant < ApplicationRecord
     validates :ambiance_id
     validates :price_id
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
