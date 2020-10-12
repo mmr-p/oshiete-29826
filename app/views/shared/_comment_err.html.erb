@@ -1,0 +1,7 @@
+<div id='err_container' style='display: none'>
+  <ul id="err-messages">
+    <% model.errors.full_messages.each do |message| %>
+    <li class='error-message'><%= message %></li>
+    <% end %>
+  </ul>
+</div>

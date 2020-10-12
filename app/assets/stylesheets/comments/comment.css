@@ -1,0 +1,50 @@
+.comments {
+  padding: 20px 0;
+}
+
+.comments-label {
+  border-bottom: darkgray solid 1px;
+}
+
+.more {
+  font-size: 13px;
+  color: #949495;
+  text-align: end;
+}
+
+.posts-label {
+  margin: 10px 0 5px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-field {
+  width: 900px;
+  font-size: 15px;
+  resize: none;
+  background-color: #ffffff;
+  border: darkgray solid 1px;
+  margin: 8px 0;
+  padding: 16px 16px 8px;
+  border-radius:5px;
+}
+
+.comment-btn {
+  width: 100px;
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px 0 15px;
+  border-radius: 4px;
+  margin: 10px 0 5px;
+  background-color: #efefef;
+  border-bottom: 5px solid #cccccc;
+}
+
+.comment-btn:hover {
+  margin-top: 13px;
+  border-bottom: 2px solid #cccccc;
+}

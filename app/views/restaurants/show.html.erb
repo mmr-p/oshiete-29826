@@ -80,30 +80,21 @@
       </tr>
     </table>
 
-<%# ！！！！！！！コメント投稿機能実装後に完成させる！！！！！！ %>
-    <%#<div class="comment-area"> %>
-      <%#= form_with(model: [@restaurant, @comment], local: true) do |f| %>
-        <%#= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field" %>
-        <%#= f.submit "コメントする", class:"口コミ" %>
-      <%# end %>
-    <%#</div>
-    <div class="comments"> %>
-      <%# if @comments %>
-        <%# @comments.each do |comment| %>
-        <%#<div class="comment-left">
-          <p class="comment-user-name"><%= comment.user.name %><%#</p>
-          <p class="comment-text"><%= comment.content %><%#</p>
-        </div>
-        <% if comment.image %>
-          <%#<div class="comment-right">
-          <%= link_to comment.image, "data-lightbox" => comment.image do %>
-            <%#= image_tag comment.image.variant(resize: '150x150') %>
-          <%# end %>
-          <%#</div>
+<!-- コメント一覧表示 -->
+    <div class="comments">
+      <ul>
+        <li>
+          <%= render 'shared/comments' %>
+        </li>
+      </ul>
+      <!-- コメント入力欄 -->
+      <div class="comment-space">
+        <p class="posts-label">コメントを投稿する</p>
+        <%= form_with url: restaurant_comments_path(@restaurant.id), model: [@restaurant, @comment], class:"comment-form" do |f| %>
+          <%= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field", id:"comment_text" %>
+          <%= f.submit "コメントする", class: "comment-btn" %>
         <% end %>
-      <%# end %>
-    <%#</div> %>
-<%# ！！！！！！！コメント投稿機能実装後に完成させる！！！！！！ %>
+    </div>
 
   </div>
 </div>

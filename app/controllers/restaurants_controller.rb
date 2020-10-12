@@ -21,6 +21,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @restaurant.comments.includes(:user).order('created_at DESC')
   end
 
   def edit

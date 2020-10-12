@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :restaurants
+  has_many :comments
 
   with_options presence: true do
     validates :name,        format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'の入力が正しくありません' }

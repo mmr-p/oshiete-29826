@@ -17,3 +17,7 @@ ja:
         genre_id:               カテゴリー
         ambiance_id:            お店の雰囲気
         price_id:               価格帯
+      comment:
+        content:                コメント
+        user:                   ユーザー
+        restaurant:             店舗情報
