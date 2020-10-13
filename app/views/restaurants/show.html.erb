@@ -81,20 +81,18 @@
     </table>
 
 <!-- コメント一覧表示 -->
-    <div class="comments">
-      <ul>
-        <li>
-          <%= render 'shared/comments' %>
-        </li>
-      </ul>
-      <!-- コメント入力欄 -->
-      <div class="comment-space">
-        <p class="posts-label">コメントを投稿する</p>
-        <%= form_with url: restaurant_comments_path(@restaurant.id), model: [@restaurant, @comment], class:"comment-form" do |f| %>
-          <%= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field", id:"comment_text" %>
-          <%= f.submit "コメントする", class: "comment-btn" %>
-        <% end %>
-    </div>
+    <ul>
+      <li id="comments_area">
+        <%= render 'shared/comments', comments: @comments %>
+      </li>
+    </ul>
+    <!-- コメント入力欄 -->
+    <div class="comment-space">
+      <p class="posts-label">コメントを投稿する</p>
+      <%= form_with url: restaurant_comments_path(@restaurant.id), model: [@restaurant, @comment], class:"comment-form" do |f| %>
+        <%= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field", id:"comment_text" %>
+        <%= f.submit "コメントする", class: "comment-btn" %>
+      <% end %>
 
   </div>
 </div>

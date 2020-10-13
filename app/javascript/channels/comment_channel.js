@@ -15,8 +15,8 @@ consumer.subscriptions.create("CommentChannel", {
       alert("コメントが入力されていません");
     }
     else {
-      const comments = document.getElementById('comments_area');
-      const entireComment = document.createElement('div');
+      const comments = document.getElementById('comments');
+      const entireComment = document.createElement('li');
       entireComment.setAttribute('class', "entire-comment");
       const commentName = document.createElement('div');
       commentName.setAttribute('class', "comment-name");

@@ -1,40 +1,41 @@
-<h3 class="comments-label">コメント（<%= @comments.count %>）</h3>
+<h3 class="comments-label">コメント（<%= comments.count %>）</h3>
 <!-- コメント１〜３つ目まで -->
-<div id='comments_area'>
-  <% @comments.first(3).each do |comment| %>
-    <% unless comment.id == nil %>
-      <li>
-        <div class="entier-comment">
-          <div class="comment-name"><%= comment.user.name %><div>
-          <div class="comment-body">
-            <%= comment.content %>
-            <% if comment.user == current_user %>
-              <%= link_to '削除', restaurant_comments_path(comment.restaurant.id), method: :delete, remote: true %>
-            <% end %>
-          </div>
-          <div class="comment-date">
-            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-          </div>
-        </div>
-      </li>
-    <% end %>
+<div id='comments'></div>
+<% comments.first(3).each do |comment| %>
+  <% unless comment.id == nil %>
+    <li class="entire-comment">
+      <div class="comment-name"><%= comment.user.name %><div>
+      <div class="comment-body">
+        <%= comment.content %>
+        <% if comment.user_id == current_user.id || current_user.admin? %>
+          <%= link_to restaurant_comment_path(comment.restaurant_id, comment.id), method: :delete, class: "trash-icon" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="comment-date">
+        <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </div>
+    </li>
   <% end %>
-</div>
+<% end %>
 <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';", class="more">
 <a style="cursor:pointer;">さらに表示</a>
 </div>
 
 <!-- コメント４つ目以降 -->
 <div id="open" style="display:none;clear:both;">
-  <% @comments.offset(3).each do |comment| %>
+  <% comments.offset(3).each do |comment| %>
     <% unless comment.id == nil %>
       <li>
         <div class="entier-comment">
           <div class="comment-name"><%= comment.user.name %><div>
           <div class="comment-body">
             <%= comment.content %>
-            <% if comment.user == current_user %>
-              <%= link_to '削除', restaurant_comments_path(comment.restaurant.id), method: :delete, remote: true %>
+            <% if comment.user == current_user || current_user.admin? %>
+              <%= link_to restaurant_comment_path(comment.restaurant.id, comment.id), method: :delete, remote: true, class: "trash-icon" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
             <% end %>
           </div>
           <div class="comment-date">
