@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
     @restaurants = Restaurant.order('created_at DESC')
