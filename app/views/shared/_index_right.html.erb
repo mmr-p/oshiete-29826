@@ -1,0 +1,23 @@
+<h2 class="right-side-header">カフェ・レストラン一覧</h2>
+<% @restaurants.each do |restaurant| %>
+  <li>
+    <div class="restaurant-lists">
+      <div class="restaurant-image">
+        <%= link_to restaurant_path(restaurant.id) do %>
+          <%= image_tag restaurant.image.variant(resize: '280x280'), class:"restaurant-img" %>
+        <% end %>
+      </div>
+      <div class="restaurant-info">
+        <h3 class="restaurant-name">
+          <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+        </h3>
+        <div class="restaurant-genre">
+          <div class="genre-name">
+            <i class="fas fa-utensils"></i><%= restaurant.genre.name %>
+          </div>
+        </div>
+        <div class="restaurant-closed"><%= "定休日：#{restaurant.closed}" %></div>
+      </div>
+    </div>
+  </li>
+<% end %>

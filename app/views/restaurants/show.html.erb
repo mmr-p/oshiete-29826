@@ -3,6 +3,7 @@
 <%= render 'shared/second-header' %>
 
 <div class="restaurant-show-page">
+
   <div class="show-header">
     <p class="show-name"><%= @restaurant.name %></p>
     <% if current_user.id == @restaurant.user_id || current_user.admin? %>

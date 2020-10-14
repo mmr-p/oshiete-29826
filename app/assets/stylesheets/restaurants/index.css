@@ -6,6 +6,48 @@
   padding: 0 50px;
 }
 
+.left-side-restaurant{
+  padding-top: 30px;
+}
+
+.search-form {
+  height: 50px;
+  position:relative;
+  max-width:300px;	
+  margin-left: 30px;
+}
+
+.search-input {
+  height:100%;
+  width: 250px;
+  padding:0 10px; 
+  position:absolute; 
+  left:0;
+  top:0; 
+  border-radius:25px;
+  outline:0;
+  background:#eee;
+}
+
+.search-btn {
+  height:100%;
+  width:50px;	
+  position:absolute; 
+  left:200px; 
+  top:0;
+  background:#f19ca7;
+  border:none;
+  border-radius:0 25px 25px 0;
+}
+
+.fa-search{
+  font-size:20px;	
+  position:absolute;
+  top:15px;
+  left:213px;	
+  color:#fff;
+}
+
 .left-side-restaurant {
   width: 25%;
   height: auto;
@@ -34,7 +76,6 @@ li {
   background-color: #ffffff;
   margin: 20px;
   padding: 15px 40px;
-
   display: flex;
 }
 

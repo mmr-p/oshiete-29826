@@ -30,4 +30,16 @@ class Restaurant < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  def self.search(search)
+    if search != ''
+      Restaurant.where('name LIKE(?)', "%#{search}%").
+        or(where('description LIKE(?)', "%#{search}%")).
+        or(where('address LIKE(?)', "%#{search}%")).
+        or(where('opening_hour LIKE(?)', "%#{search}%"))
+                .or(where('closed LIKE(?)', "%#{search}%"))
+    else
+      Restaurant.order('created_at DESC')
+    end
+  end
 end
