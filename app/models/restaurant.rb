@@ -7,6 +7,8 @@ class Restaurant < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments, dependent: :destroy
+  has_many         :restaurant_tag_relations
+  has_many         :tags, through: :restaurant_tag_relations
 
   with_options presence: true do
     validates :name
