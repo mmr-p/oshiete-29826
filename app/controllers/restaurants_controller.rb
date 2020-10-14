@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login
-  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.order('created_at DESC')
@@ -43,6 +43,10 @@ class RestaurantsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def search
+    @restaurants = Restaurant.search(params[:keyword])
   end
 
   private
