@@ -53,6 +53,14 @@
         <th>雰囲気</th><td><%= @restaurant.ambiance.name %></td>
       </tr>
       <tr>
+        <th>タグ</th>
+        <td>
+          <% @restaurant.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
         <th class="hour-table">営業時間</th><td><%= @restaurant.opening_hour %></td>
       </tr>
       <tr>

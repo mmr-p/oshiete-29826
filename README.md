@@ -68,6 +68,7 @@ Things you may want to cover:
 - has_many :likes
 - has_many :liked_users
 - has_many :restaurant_tag_relations
+- has_many :tags, through: :restaurant_tag_relations
 
 ## commentsテーブル
 
@@ -102,6 +103,7 @@ Things you may want to cover:
 ## Association
 
 - has_many :restaurant_tag_relations
+- has_many :restaurants, through: :restaurant_tag_relations
 
 ## restaurant_tag_relationsテーブル
 
