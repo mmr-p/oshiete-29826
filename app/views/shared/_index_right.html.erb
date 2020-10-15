@@ -4,7 +4,7 @@
     <div class="restaurant-lists">
       <div class="restaurant-image">
         <%= link_to restaurant_path(restaurant.id) do %>
-          <%= image_tag restaurant.image.variant(resize: '280x280'), class:"restaurant-img" %>
+          <%= image_tag restaurant.image, class:"restaurant-img" %>
         <% end %>
       </div>
       <div class="restaurant-info">
