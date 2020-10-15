@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments, dependent: :destroy
-  has_many         :restaurant_tag_relations
+  has_many         :restaurant_tag_relations, dependent: :destroy
   has_many         :tags, through: :restaurant_tag_relations
 
   with_options presence: true do
@@ -42,6 +42,13 @@ class Restaurant < ApplicationRecord
                 .or(where('closed LIKE(?)', "%#{search}%"))
     else
       Restaurant.order('created_at DESC')
+    end
+  end
+
+  def save_tags(saved_restaurant_tags)
+    saved_restaurant_tags.each do |new_name|
+      restaurant_tag = Tag.find_or_create_by(name: new_name)
+      self.tag << restaurant_tag
     end
   end
 end

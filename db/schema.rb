@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_155639) do
     t.bigint "tag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id", "tag_id"], name: "index_restaurant_tag_relations_on_restaurant_id_and_tag_id", unique: true
     t.index ["restaurant_id"], name: "index_restaurant_tag_relations_on_restaurant_id"
     t.index ["tag_id"], name: "index_restaurant_tag_relations_on_tag_id"
   end

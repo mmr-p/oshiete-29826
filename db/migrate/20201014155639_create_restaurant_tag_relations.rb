@@ -5,5 +5,6 @@ class CreateRestaurantTagRelations < ActiveRecord::Migration[6.0]
       t.references :tag,        foreign_key: true
       t.timestamps
     end
+    add_index :restaurant_tag_relations, [:restaurant_id, :tag_id], unique: true
   end
 end
