@@ -1,0 +1,22 @@
+<%# CSS・・・assets/stylesheets/messages/message.css %>
+<% @messages.each do |message| %>
+  <% if message.user_id == current_user.id %>
+  <div class="my-message-parent", id="messages">
+    <div class="fake-my-messages">
+      <%= render 'shared/msg_content', message: message %>
+    </div>
+    <div class="my-messages">
+      <%= render 'shared/msg_content', message: message %>
+    </div>
+  </div>
+  <% else %>
+  <div class="my-message-parent">
+    <div class="your-messages">
+      <%= render 'shared/msg_content', message: message %>
+    </div>
+    <div class="fake-your-messages">
+      <%= render 'shared/msg_content', message: message %>
+    </div>
+  </div>
+  <% end %>
+<% end %>

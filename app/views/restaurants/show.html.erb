@@ -42,7 +42,7 @@
       <%= image_tag @restaurant.image.variant(resize: '600x600') %>
     <% end %>
     <p class="show-post-user"><%= @restaurant.user.name %></p>
-    <p class="show-description"><%= @restaurant.description %></p>
+    <p class="show-description"><%= simple_format(h @restaurant.description) %></p>
 
     <table class="info-table">
       <caption><%= "#{@restaurant.name}の店舗情報" %></caption>
@@ -52,6 +52,8 @@
       <tr>
         <th>雰囲気</th><td><%= @restaurant.ambiance.name %></td>
       </tr>
+
+      <!-- タグ機能実装後に追加！！！！！
       <tr>
         <th>タグ</th>
         <td>
@@ -59,7 +61,8 @@
             <%= tag.name %>
           <% end %>
         </td>
-      </tr>
+      </tr>-->
+      
       <tr>
         <th class="hour-table">営業時間</th><td><%= @restaurant.opening_hour %></td>
       </tr>

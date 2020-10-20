@@ -11,11 +11,9 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = current_user.restaurants.new(restaurant_params)
-    tag_list = params[:restaurant][:tag_ids].split(',')
+    @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.valid?
       @restaurant.save
-      @restaurant.save_tags(tag_list)
       redirect_to restaurants_path
     else
       render :new

@@ -1,5 +1,4 @@
 class RestaurantsTag
-
   # include ActiveModel::Model
   # attr_accessor :name, :description, :genre_id, :ambiance_id, :price_id,
   #               :tel, :address, :opening_hour, :closed, :image, :user_id
@@ -29,7 +28,7 @@ class RestaurantsTag
 
   # def save
   #   tweet = Restaurant.create(name: name, description: description, genre_id: genre_id,
-  #                             ambiance_id: ambiance_id, price_id: price_id, tel: tel, 
+  #                             ambiance_id: ambiance_id, price_id: price_id, tel: tel,
   #                             address: address, opening_hour: opening_hour, closed: closed,
   #                             image: image, user_id: user_id, tag_name: tag_name)
   #   tag = Tag.where(tag_name: tag_name).first_or_initialize

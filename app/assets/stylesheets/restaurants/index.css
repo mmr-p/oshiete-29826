@@ -99,6 +99,8 @@ li {
   margin-bottom: 5px;
 }
 
-.restaurant-closed {
-
+img.restaurant-img {
+  object-fit: cover;
+  width: 280px;
+  height: 280px;
 }

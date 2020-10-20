@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   devise_for :users
   root to: 'restaurants#top'
   resources :restaurants do
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create, :destroy]
   end
-  mount ActionCable.server => '/cable'
+  resources :messages, only: [:index, :create]
 end
