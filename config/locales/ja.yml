@@ -21,3 +21,6 @@ ja:
         content:                コメント
         user:                   ユーザー
         restaurant:             店舗情報
+      message:
+        content:                テキスト
+        user:                   ユーザー
