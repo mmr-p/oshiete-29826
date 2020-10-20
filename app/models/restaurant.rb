@@ -37,8 +37,8 @@ class Restaurant < ApplicationRecord
     if search != ''
       Restaurant.where('name LIKE(?)', "%#{search}%").
         or(where('description LIKE(?)', "%#{search}%")).
-        or(where('address LIKE(?)', "%#{search}%")).
-        or(where('opening_hour LIKE(?)', "%#{search}%"))
+        or(where('address LIKE(?)', "%#{search}%"))
+                .or(where('opening_hour LIKE(?)', "%#{search}%"))
                 .or(where('closed LIKE(?)', "%#{search}%"))
     else
       Restaurant.order('created_at DESC')

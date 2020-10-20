@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_item
-  
+
   def index
     @message = current_user.messages.new
   end
@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
   end
 
   private
+
   def message_params
     params.require(:message).permit(:content).merge(user_id: current_user.id)
   end
