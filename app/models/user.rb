@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :restaurants
   has_many :comments
   has_many :messages, dependent: :destroy
+  has_one_attached :image
 
   with_options presence: true do
     validates :name,        format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'の入力が正しくありません' }

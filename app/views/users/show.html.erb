@@ -1,0 +1,25 @@
+<%# CSS・・・assets/stylesheets/user/u_show.css %>
+<%= render 'shared/header' %>
+<%= render 'shared/second-header' %>
+
+<div class="restaurant-page">
+<%# 左のエリア %>
+  <div class="left-side-restaurant">
+    <% if @user.image.attached?%>
+      <%= image_tag @user.image, class:"restaurant-img" %>
+    <% else %>
+      <%= image_tag 'mypage.png' %>
+    <% end %>
+    <%= @user.name %>
+    <%= @user.email %>
+    <div class="posts", id="u_posts">投稿一覧</div>
+    <div class="likes", id="u_likes">いいね一覧</div>
+    <%= link_to "編集", edit_user_registration_path %>
+  </div>
+
+  <%# 右のエリア %>
+  <div class="right-side-restaurant">
+    <h2 class="right-side-header">投稿一覧</h2>
+    <%= render 'shared/index_right' %>
+  </div>
+</div>

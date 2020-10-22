@@ -1,0 +1,8 @@
+.u_show_page {
+  height: calc(100vh - 148px);
+  background-color: #fef4f4;
+  display: flex;
+  margin-top: 18px;
+  padding: 0 50px;
+}
+

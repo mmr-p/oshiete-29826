@@ -7,9 +7,11 @@
       <div class="comment-name"><%= comment.user.name %><div>
       <div class="comment-body">
         <%= comment.content %>
-        <% if comment.user_id == current_user.id || current_user.admin? %>
-          <%= link_to restaurant_comment_path(comment.restaurant_id, comment.id), method: :delete, class: "trash-icon" do %>
-            <i class="fas fa-trash-alt"></i>
+        <% if user_signed_in? %>
+          <% if comment.user_id == current_user.id || current_user.admin? %>
+            <%= link_to restaurant_comment_path(comment.restaurant_id, comment.id), method: :delete, class: "trash-icon" do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -32,9 +34,11 @@
           <div class="comment-name"><%= comment.user.name %><div>
           <div class="comment-body">
             <%= comment.content %>
-            <% if comment.user == current_user || current_user.admin? %>
-              <%= link_to restaurant_comment_path(comment.restaurant.id, comment.id), method: :delete, remote: true, class: "trash-icon" do %>
-                <i class="fas fa-trash-alt"></i>
+            <% if user_signed_in? %>
+              <% if comment.user == current_user || current_user.admin? %>
+                <%= link_to restaurant_comment_path(comment.restaurant.id, comment.id), method: :delete, remote: true, class: "trash-icon" do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
               <% end %>
             <% end %>
           </div>
