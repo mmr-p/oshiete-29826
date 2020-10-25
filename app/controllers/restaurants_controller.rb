@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :move_to_login
+  before_action :move_to_login, except: [:index, :show, :search, :top]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index

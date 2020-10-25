@@ -1,0 +1,24 @@
+<%# CSS・・・assets/stylesheets/user/u_show.css %>
+<%= render 'shared/header' %>
+<%= render 'shared/second-header' %>
+
+<div class="restaurant-page">
+<%# 左のエリア %>
+  <div class="left-side-prof">
+    <% if @user.image.attached?%>
+      <div class="prof-icon"><%= image_tag @user.image, class:"prof-img"%></div>
+    <% else %>
+      <div class="prof-icon"><%= image_tag 'mypage.png', class:"prof-img" %></div>
+    <% end %>
+    <%= link_to "プロフィール画像変更", edit_user_path(current_user), class:"notes" %>
+    <div class="prof-name"><%= @user.name %></div>
+    <div class="posts", id="u_posts">投稿一覧</div>
+    <div class="likes", id="u_likes">いいね一覧</div>
+  </div>
+
+  <%# 右のエリア %>
+  <div class="right-side-restaurant">
+    <h2 class="right-side-header">マイページ ＞ 投稿一覧</h2>
+    <%= render 'shared/index_right' %>
+  </div>
+</div>

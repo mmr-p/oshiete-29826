@@ -18,6 +18,18 @@
   margin-right: 15px;
 }
 
+.header-prof-img {
+  width:65px;
+	height:65px;
+	object-fit:cover;
+  border-radius:50%;
+}
+
+.header-prof-img:hover {
+  padding: 1px;
+  border: 2px solid #f5b2b2;
+}
+
 .login-btn {
   width: 200px;
   height: 50px;
@@ -34,4 +46,8 @@
 .login-btn:hover {
   background-color: #98605e;
   color: #ffffff;
+}
+
+.logout-btn {
+  margin: 21px 0 0 10px;
 }

@@ -1,0 +1,46 @@
+<%# CSS・・・assets/stylesheets/user/u_show.css %>
+<%= render 'shared/header' %>
+<%= render 'shared/second-header' %>
+
+<div class="restaurant-page">
+<%# 左のエリア %>
+  <div class="left-side-prof">
+    <% if @user.image.attached?%>
+      <div><%= image_tag @user.image, class:"prof-img"%></div>
+    <% else %>
+      <div><%= image_tag 'mypage.png', class:"prof-img" %></div>
+    <% end %>
+    <div><%= @user.name %></div>
+    <div class="posts", id="u_posts">投稿一覧</div>
+    <div class="likes", id="u_likes">いいね一覧</div>
+  </div>
+
+  <%# 右のエリア %>
+<div class="registration-background">
+  <div class="prof-edit-panel">
+
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render "shared/error_messages", model: @user %>
+      <div class="form-group">
+        <div>
+          <% if @user.image.attached?%>
+            <div><%= image_tag @user.image, class:"edit-prof-img"%></div>
+          <% else %>
+            <div><%= image_tag 'mypage.png', class:"edit-prof-img" %></div>
+          <% end %>
+        </div>
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "変更する", class:"prof-edit-btn" %>
+      </div>
+      <div class="notes">
+        <%= link_to 'もどる', user_path(current_user)%>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+

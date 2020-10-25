@@ -7,11 +7,21 @@
     <ul class='lists-right'>
       <%# ログインの有無で表示が変わる%>
       <% if user_signed_in? %>
-      <li><%= link_to image_tag("mypage.png", class:"right-list mypage-icon"), "#" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "right-list login-btn" %></li>
+        <% if current_user.image.attached?%>
+          <li>
+            <%= link_to user_path(current_user) do %>
+              <%= image_tag current_user.image, class:"header-prof-img"%>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to image_tag("mypage.png", class:"right-list mypage-icon"), user_path(current_user) %>
+          </li>
+        <% end %>
+        <li class="logout-btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "right-list login-btn" %></li>
       <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "right-list login-btn" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "right-list register-btn" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "right-list login-btn" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "right-list register-btn" %></li>
       <% end %>
     </ul>
   </div>
