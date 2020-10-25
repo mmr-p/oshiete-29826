@@ -6,20 +6,19 @@
 <%# 左のエリア %>
   <div class="left-side-restaurant">
     <% if @user.image.attached?%>
-      <%= image_tag @user.image, class:"restaurant-img" %>
+      <div><%= image_tag @user.image, class:"prof-img"%></div>
     <% else %>
-      <%= image_tag 'mypage.png' %>
+      <div><%= image_tag 'mypage.png', class:"prof-img" %></div>
     <% end %>
-    <%= @user.name %>
-    <%= @user.email %>
+    <div><%= @user.name %></div>
     <div class="posts", id="u_posts">投稿一覧</div>
     <div class="likes", id="u_likes">いいね一覧</div>
-    <%= link_to "編集", edit_user_registration_path %>
+    <%= link_to "プロフィール編集", edit_user_path(current_user) %>
   </div>
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
-    <h2 class="right-side-header">投稿一覧</h2>
+    <h2 class="right-side-header">マイページ ＞ 投稿一覧</h2>
     <%= render 'shared/index_right' %>
   </div>
 </div>

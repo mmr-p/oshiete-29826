@@ -1,0 +1,51 @@
+<%# CSS・・・assets/stylesheets/user/u_show.css %>
+<%= render 'shared/header' %>
+<%= render 'shared/second-header' %>
+
+<div class="restaurant-page">
+<%# 左のエリア %>
+  <div class="left-side-restaurant">
+    <% if @user.image.attached?%>
+      <div><%= image_tag @user.image, class:"prof-img"%></div>
+    <% else %>
+      <div><%= image_tag 'mypage.png', class:"prof-img" %></div>
+    <% end %>
+    <div><%= @user.name %></div>
+    <div class="posts", id="u_posts">投稿一覧</div>
+    <div class="likes", id="u_likes">いいね一覧</div>
+  </div>
+
+  <%# 右のエリア %>
+<div class="registration-background">
+  <div class="registration-panel">
+
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render "shared/error_messages", model: @user %>
+      <div class="form-group">
+        <div>
+          <% if @user.image.attached?%>
+            <div><%= image_tag @user.image, class:"prof-img"%></div>
+          <% else %>
+            <div><%= image_tag 'mypage.png', class:"prof-img" %></div>
+          <% end %>
+        </div>
+        <%= f.file_field :image %>
+      </div>
+
+
+      <div class="form-group">
+        <div>
+          <label class="info-text">メールアドレス</label>
+        </div>
+        <%= f.email_field :email, class:"form-space" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "変更する", class:"register-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+

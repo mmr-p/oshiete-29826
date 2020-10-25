@@ -6,3 +6,8 @@
   padding: 0 50px;
 }
 
+.prof-img {
+  object-fit: cover;
+  width: 130px;
+  height: 130px;
+}
