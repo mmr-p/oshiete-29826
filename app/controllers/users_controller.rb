@@ -9,9 +9,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    unless @user.update(user_params)
-      flash.now[:alert] = '更新に失敗しました'
-    end
+    flash.now[:alert] = '更新に失敗しました' unless @user.update(user_params)
   end
 
   private
