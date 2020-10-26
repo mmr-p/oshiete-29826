@@ -14,6 +14,8 @@
           <label class="info-text">写真</label>
           <div class="notes">外観やメニュー、料理の写真などを共有しよう</div>
         </div>
+        <%= image_tag @restaurant.image, class:"restaurant-img" if @restaurant.image.present? %>
+        <div id="restaurant-image-list"></div>
         <%= f.file_field :image, class:"image-form" %>
       </div>
 
