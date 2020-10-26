@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :move_to_login, except: [:index, :show, :search, :top]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.order('created_at DESC')
@@ -51,7 +51,7 @@ class RestaurantsController < ApplicationController
 
   private
 
-  def set_item
+  def set_restaurant
     @restaurant = Restaurant.find(params[:id])
   end
 

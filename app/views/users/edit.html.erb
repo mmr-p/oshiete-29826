@@ -22,13 +22,8 @@
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "shared/error_messages", model: @user %>
       <div class="form-group">
-        <div>
-          <% if @user.image.attached?%>
-            <div><%= image_tag @user.image, class:"edit-prof-img"%></div>
-          <% else %>
-            <div><%= image_tag 'mypage.png', class:"edit-prof-img" %></div>
-          <% end %>
-        </div>
+        <%= image_tag @user.image, class:"edit-prof-img" if @user.image.present? %>
+        <div id="prof-image-list"></div>
         <%= f.file_field :image %>
       </div>
 

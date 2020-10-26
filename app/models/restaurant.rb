@@ -35,8 +35,8 @@ class Restaurant < ApplicationRecord
 
   def self.search(search)
     if search != ''
-      Restaurant.where('name LIKE(?)', "%#{search}%").
-        or(where('description LIKE(?)', "%#{search}%"))
+      Restaurant.where('name LIKE(?)', "%#{search}%")
+                .or(where('description LIKE(?)', "%#{search}%"))
                 .or(where('address LIKE(?)', "%#{search}%"))
                 .or(where('opening_hour LIKE(?)', "%#{search}%"))
                 .or(where('closed LIKE(?)', "%#{search}%"))
