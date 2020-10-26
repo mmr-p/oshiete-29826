@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :restaurants
-  has_many :comments
-  has_many :messages, dependent: :destroy
+  has_many :comments,          dependent: :destroy
+  has_many :messages,          dependent: :destroy
+  has_many :likes,             dependent: :destroy
+  has_many :liked_restaurants, through: :likes,     source: :restaurant
   has_one_attached :image
 
   with_options presence: true do
@@ -26,5 +28,9 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
+  end
+
+  def already_liked?(restaurant)
+    self.likes.exists?(restaurant_id: restaurant.id)
   end
 end

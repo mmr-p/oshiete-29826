@@ -42,7 +42,7 @@ Things you may want to cover:
 - has_many :comments
 - has_many :messages
 - has_many :likes
-- has_many :liked_restaurants
+- has_many :liked_restaurants, through: :likes
 
 ## restaurantsテーブル
 
@@ -66,7 +66,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_many :comments
 - has_many :likes
-- has_many :liked_users
+- has_many :liked_users, through: :likes
 - has_many :restaurant_tag_relations
 - has_many :tags, through: :restaurant_tag_relations
 

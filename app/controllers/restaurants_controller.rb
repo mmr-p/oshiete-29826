@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @restaurant.comments.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def edit
