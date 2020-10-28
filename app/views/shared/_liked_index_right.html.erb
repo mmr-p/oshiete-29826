@@ -1,4 +1,4 @@
-<% @restaurants.each do |restaurant| %>
+<% @user.liked_restaurants.each do |restaurant| %>
   <li>
     <div class="restaurant-lists">
       <div class="restaurant-image">
@@ -10,9 +10,6 @@
         <h3 class="restaurant-name">
           <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
         </h3>
-        <div class="index-like">
-          <i class="fas fa-heart"></i> <%= restaurant.liked_users.count %>
-        </div>
         <div class="restaurant-genre">
           <div class="genre-name">
             <i class="fas fa-utensils"></i><%= restaurant.genre.name %>
