@@ -108,3 +108,21 @@ img.restaurant-img {
 .index-like {
   color: #f09199;
 }
+
+.like-ranks {
+  display: inline-block;
+  justify-content: end;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  transition: .4s;
+  margin: 10px 0 0 25px;
+  color: #98605e;
+  background-color: #fef9fb;
+  border: double 3px #98605e;
+  font-weight: bold;
+}
+
+.like-ranks:hover {
+  background: #98605e;
+  color: #fef9fb;
+}
