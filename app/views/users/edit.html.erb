@@ -8,7 +8,7 @@
     <% if @user.image.attached?%>
       <div><%= image_tag @user.image, class:"prof-img"%></div>
     <% else %>
-      <div><%= image_tag 'mypage.png', class:"prof-img" %></div>
+      <div><%= image_tag 'mypage-show.png', class:"prof-img" %></div>
     <% end %>
     <div><%= @user.name %></div>
     <div class="posts", id="u_posts">投稿一覧</div>

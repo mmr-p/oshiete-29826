@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :comments,          dependent: :destroy
   has_many :messages,          dependent: :destroy
   has_many :likes,             dependent: :destroy
-  has_many :liked_restaurants, through: :likes,     source: :restaurant
+  has_many :liked_restaurants, through: :likes, source: :restaurant
   has_one_attached :image
 
   with_options presence: true do
@@ -31,6 +31,6 @@ class User < ApplicationRecord
   end
 
   def already_liked?(restaurant)
-    self.likes.exists?(restaurant_id: restaurant.id)
+    likes.exists?(restaurant_id: restaurant.id)
   end
 end

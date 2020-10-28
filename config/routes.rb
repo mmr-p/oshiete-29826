@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'restaurants#top'
   resources :restaurants do
     collection do 
-      get 'search'
+      get 'search', 'ranking'
     end
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]

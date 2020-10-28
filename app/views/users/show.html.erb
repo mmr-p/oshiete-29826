@@ -8,18 +8,24 @@
     <% if @user.image.attached?%>
       <div class="prof-icon"><%= image_tag @user.image, class:"prof-img"%></div>
     <% else %>
-      <div class="prof-icon"><%= image_tag 'mypage.png', class:"prof-img" %></div>
+      <div class="prof-icon"><%= image_tag 'mypage-show.png', class:"prof-img" %></div>
     <% end %>
     <%= link_to "プロフィール画像変更", edit_user_path(current_user), class:"notes" %>
     <div class="prof-name"><%= @user.name %></div>
-    <div class="posts", id="u_posts">投稿一覧</div>
-    <div class="likes", id="u_likes">いいね一覧</div>
+    <div class="posts", id="u_posts">
+      <%= link_to "投稿一覧", user_path(current_user, anchor: 'posts') %>
+    </div>
+    <div class="likes", id="u_likes">
+      <%= link_to "いいね一覧", user_path(current_user, anchor: 'likes') %>
+    </div>
   </div>
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
+    <div id="posts"></div>
     <h2 class="right-side-header">マイページ ＞ 投稿一覧</h2>
     <%= render 'shared/index_right' %>
+    <div id="likes"></div>
     <h2 class="right-side-header">マイページ ＞ いいね一覧</h2>
     <%= render 'shared/liked_index_right' %>
   </div>

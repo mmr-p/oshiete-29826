@@ -6,6 +6,10 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.order('created_at DESC')
   end
 
+  def ranking
+    @restaurants = Restaurant.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
+  end
+
   def new
     @restaurant = Restaurant.new
   end

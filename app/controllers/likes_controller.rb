@@ -13,6 +13,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
