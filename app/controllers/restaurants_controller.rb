@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   end
 
   def ranking
-    @restaurants = Restaurant.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
+    @restaurants = Restaurant.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
   end
 
   def new
