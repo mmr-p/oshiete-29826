@@ -1,7 +1,11 @@
 <% if user_signed_in? %>
   <% if current_user.already_liked?(@restaurant) %>
-    <%= button_to 'いいねを取り消す', restaurant_like_path(restaurant_id: @restaurant, id: @restaurant.likes[0].id), method: :delete, remote: true, id:"like-btn-#{@restaurant.id}" %>
+    <%= button_to restaurant_like_path(restaurant_id: @restaurant, id: @restaurant.likes[0].id), method: :delete, remote: true, id:"like-btn-#{@restaurant.id}", class:"liked-btn" do %>
+      <i class="fas fa-heart like-heart"></i><div class="like-text">お気に入り解除</div>
+    <% end %>
   <% else %>
-    <%= button_to 'いいね', restaurant_likes_path(@restaurant), remote: true, id:"like-btn-#{@restaurant.id}" %>
+    <%= button_to restaurant_likes_path(@restaurant), remote: true, id:"like-btn-#{@restaurant.id}", class:"like-btn" do %>
+      <i class="far fa-heart like-heart"></i><div class="like-text">お気に入り登録</div>
+    <% end %>
   <% end %>
 <% end %>
