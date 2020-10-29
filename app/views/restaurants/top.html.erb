@@ -2,11 +2,15 @@
 <%= render 'shared/header' %>
 <%= render 'shared/second-header' %>
 <div class='index-main'>
-  <div class="about">
-    <h1>O!SHI-eteとは？</h1>
+  <div class="about", id="about">
+    <h1 class="about-headline">O!SHI-eteとは？</h1>
+    <%= image_tag 'dish.png', class:"about-icon" %>
+    <%= render 'shared/about' %>
   </div>
-  <div class="how-to">
-    <h1>使い方</h1>
+  <%= image_tag 'toppage.jpg', class:"top-image"%>
+  <div class="how-to", id="how_to">
+    <h1><span class="howto-headline">　使い方　</span><i class="fas fa-highlighter"></i></h1>
+    <%= render 'shared/how_to' %>
   </div>
   <%= link_to image_tag("eat.png", class:"eat-icon"), new_restaurant_path %>
 </div>

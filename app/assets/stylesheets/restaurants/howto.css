@@ -1,0 +1,14 @@
+.how-to {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.howto-headline {
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #f19ca7, #fef4f4);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 40%;
+}
+
+

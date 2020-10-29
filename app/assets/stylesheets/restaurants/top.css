@@ -1,10 +1,16 @@
 .index-main {
   background-color: #fef4f4;
+  padding-top: 5px;
 }
 
 .eat-icon {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 100;
+}
+
+.top-image {
+  width: 100vw;
+  height: 300px;
+  object-fit: contain;
 }

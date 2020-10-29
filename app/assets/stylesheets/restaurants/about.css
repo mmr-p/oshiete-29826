@@ -1,0 +1,40 @@
+.about {
+  text-align: center;
+  position: relative;
+}
+
+.about-headline {
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  text-shadow: 0 0 2px white;
+  font-weight: bold;
+}
+
+.about-icon {
+  width: 190px;
+  height: 190px;
+}
+
+.about-text {
+  padding: 15px 0;
+  line-height: 40px;
+}
+
+.about-first-line {
+  margin-bottom: 15px;
+  font-size: larger;
+}
+
+.em-text {
+  font-size: 31px;
+  color: #f19ca7;
+}
+
+.about-last-line {
+  margin: 70px 0;
+}
