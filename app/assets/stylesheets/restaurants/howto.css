@@ -11,4 +11,32 @@
   background-size: 100% 40%;
 }
 
+.howto-parent {
+  display: flex;
+  justify-content: space-around;
+}
 
+.howto-child {
+  background-color: white;
+  height: 300px;
+  width: 600px;
+  margin: 20px 0 80px;
+  position: relative;
+  border: solid 3px #98605e;
+  border-radius: 10px;
+}
+
+.howto-child .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: 3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
+  background: #98605e;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}

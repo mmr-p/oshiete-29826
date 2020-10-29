@@ -14,3 +14,26 @@
   height: 300px;
   object-fit: contain;
 }
+
+.above-main {
+  position: relative;
+}
+
+.top-head-image {
+  width: 100vw;
+  height: 650px;
+  object-fit: cover;
+}
+
+.top-head-text {
+  color: white;
+  opacity: 0.8;
+  text-shadow: 0 0 2px #98605e;
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
