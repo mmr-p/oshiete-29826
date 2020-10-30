@@ -1,8 +1,8 @@
 <%# CSS・・・assets/stylesheets/shared/second-header.css %>
 <ul class='lists-center'>
   <li><%= link_to 'HOME', root_path, class: "center-list" %></li>
-  <li><%= link_to 'ABOUT', "#", class: "center-list" %></li>
-  <li><%= link_to 'HOW TO', "#", class: "center-list" %></li>
+  <li><%= link_to 'ABOUT', root_path(anchor: 'about'), class: "center-list" %></li>
+  <li><%= link_to 'HOW TO', root_path(anchor: 'how_to'), class: "center-list" %></li>
   <li><%= link_to 'EAT', restaurants_path, class: "center-list" %></li>
   <li><%= link_to 'CHAT', messages_path(anchor: 'bottom'), class: "center-list" %></li>
 </ul>
