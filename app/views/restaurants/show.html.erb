@@ -54,7 +54,8 @@
 
         <%# 店舗情報エリア %>
         <table class="info-table">
-          <caption><%= "#{@restaurant.name}の店舗情報" %></caption>
+          <caption><span class="caption-restaurant-name"><%= "#{@restaurant.name}" %></span>の店舗情報</caption>
+          <div class="table-space">
           <tr>
             <th class="genre-table">ジャンル</th><td><%= @restaurant.genre.name %></td>
           </tr>
@@ -88,6 +89,7 @@
           <tr>
             <th class="genre-others">備考</th><td><%# 備考情報（任意）を追加したら実装する %></td>
           </tr>
+          </div>
         </table>
       </div>
     </div>
