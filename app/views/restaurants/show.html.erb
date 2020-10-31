@@ -43,10 +43,10 @@
       </div>
       <div class="show-main-body">
         <%= link_to @restaurant.image, "data-lightbox" => @restaurant.image do %>
-          <%= image_tag @restaurant.image.variant(resize: '600x600') %>
+          <%= image_tag @restaurant.image.variant(resize: '600x600'), class:"show-image" %>
         <% end %>
-        <p class="show-post-user"><%= @restaurant.user.name %></p>
-        <p class="show-description"><%= simple_format(h @restaurant.description) %></p>
+        <p class="show-post-user"><i class="fas fa-user-edit"></i><%= @restaurant.user.name %></p>
+        <div class="show-description"><%= simple_format(h @restaurant.description) %></div>
         <%# いいねボタン %>
         <div id="like-btn-<%= @restaurant.id %>", class="like">
           <%= render 'likes/like', restaurant: @restaurant %>
