@@ -13,8 +13,14 @@
   justify-content: space-between;
 }
 
-.edit-btn {
+.s-edit-btn {
   width: 100px;
+  color: #848484;
+  font-size: 13px;
+}
+
+.s-edit-btn:hover {
+  color: black;
 }
 
 .show-name {
@@ -30,16 +36,26 @@
   width: 1000px;
   height: 100%;
   background-color: #ffffff;
-  padding: 0 30px 30px;
+  padding: 18px 30px 30px;
 }
 
 .show-list {
   display: flex;
+  margin-left: 10%;
 }
 
 .show-sammary {
   display: flex;
-  margin: 10px 35px 15px 0;
+  margin: 10px 35px 8px 0;
+  background-color: #f1f1f1;
+  color: #454545;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.show-main-body {
+  margin: 0 10% 50px;
 }
 
 .show-description {
