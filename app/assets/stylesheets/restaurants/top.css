@@ -3,12 +3,6 @@
   padding-top: 5px;
 }
 
-.eat-icon {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-}
-
 .top-image {
   width: 100vw;
   height: 300px;
@@ -36,4 +30,15 @@
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 20px;
 }

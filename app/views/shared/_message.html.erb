@@ -1,7 +1,7 @@
 <%# CSS・・・assets/stylesheets/messages/message.css %>
 <% @messages.each do |message| %>
   <% if message.user_id == current_user.id %>
-  <div class="my-message-parent", id="messages">
+  <div class="my-message-parent", id="my_messages">
     <div class="fake-my-messages">
       <%= render 'shared/msg_content', message: message %>
     </div>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <% else %>
-  <div class="my-message-parent">
+  <div class="my-message-parent", id="your_messages">
     <div class="your-messages">
       <%= render 'shared/msg_content', message: message %>
     </div>
