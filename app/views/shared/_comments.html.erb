@@ -15,7 +15,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="comment-date">
+      <div class="comment-date notes">
         <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
       </div>
     </li>
@@ -29,7 +29,7 @@
 <div id="open" style="display:none;clear:both;">
   <% comments.offset(3).each do |comment| %>
     <% unless comment.id == nil %>
-      <li>
+      <li class="entire-comment">
         <div class="entier-comment">
           <div class="comment-name"><%= comment.user.name %><div>
           <div class="comment-body">
@@ -42,7 +42,7 @@
               <% end %>
             <% end %>
           </div>
-          <div class="comment-date">
+          <div class="comment-date notes">
             <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
           </div>
         </div>
