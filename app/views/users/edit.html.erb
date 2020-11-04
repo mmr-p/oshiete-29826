@@ -22,7 +22,7 @@
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "shared/error_messages", model: @user %>
       <div class="form-group">
-        <%= image_tag @user.image, class:"edit-prof-img" if @user.image.present? %>
+        <%= image_tag @user.image, class:"edit-prof-img", id:"edit_prof_img" if @user.image.present? %>
         <div id="prof-image-list"></div>
         <%= f.file_field :image %>
       </div>

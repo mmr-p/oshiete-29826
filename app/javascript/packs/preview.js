@@ -10,7 +10,7 @@ if (document.URL.match( /users/ ) && document.URL.match( /edit/ )) {
       ImageList.appendChild(imageElement);
     };
     document.getElementById('user_image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img');
+      const imageContent = document.getElementById('edit_prof_img');
       if (imageContent){
         imageContent.remove();
       }
