@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :move_to_login
   before_action :set_user
   def show
-    @restaurants = current_user.restaurants
+    @restaurants = current_user.restaurants.order('created_at DESC')
   end
 
   def edit

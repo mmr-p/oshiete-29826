@@ -13,8 +13,14 @@
   justify-content: space-between;
 }
 
-.edit-btn {
+.s-edit-btn {
   width: 100px;
+  color: #848484;
+  font-size: 13px;
+}
+
+.s-edit-btn:hover {
+  color: black;
 }
 
 .show-name {
@@ -30,33 +36,99 @@
   width: 1000px;
   height: 100%;
   background-color: #ffffff;
-  padding: 0 30px 30px;
+  padding: 18px 30px 30px;
 }
 
 .show-list {
   display: flex;
+  margin-left: 10%;
 }
 
 .show-sammary {
   display: flex;
-  margin: 10px 35px 15px 0;
+  margin: 10px 35px 8px 0;
+  background-color: #f1f1f1;
+  color: #454545;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.show-main-body {
+  margin: 0 10% 50px;
+}
+
+.show-image {
+  height: 400px;
+  width: 600px;
+  object-fit: contain;
+  background-color: #f6f6f6;
+}
+
+.show-post-user {
+  padding: 10px 0 0 5px;
+}
+
+.fa-user-edit {
+  margin-right: 5px;
 }
 
 .show-description {
-  margin: 15px 0 50px;
+  margin: 25px 0 0;
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  color: #555;
+  background: #eaedf7;
+  line-height: 28px;
+}
+
+.show-description::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #eaedf7;
 }
 
 .info-table {
+  margin-top: 100px;
   width: 700px;
-  background-color: lightgray;
-  border: darkgray solid 1px;
+  border-collapse: collapse;
+  border: solid 2px lightgray;
 }
 
-.table-records {
-  padding: 20px 0;
+caption {
+  font-size: 17px;
+  padding-bottom: 3px;
+}
+
+.caption-restaurant-name {
+  color: #98605e;
+  font-size: 25px;
+}
+
+table th {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+table td {
+}
+
+table th, table td {
+  border: dashed 1px lightgray;
+  padding: 20px;
 }
 
 .map {
   height: 400px;
   width: 520px;
+  margin-top: 5px;
+}
+
+.genre-web {
+  font-size: 15px;
 }

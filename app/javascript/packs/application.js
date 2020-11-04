@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../map")
 require("./preview")
+require("../back_to_top")
 require('jquery')
 
 // Uncomment to copy all static images under ../images to the output folder and reference

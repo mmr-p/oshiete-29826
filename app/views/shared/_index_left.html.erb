@@ -1,3 +1,6 @@
+<div class="restaurant-new-form">
+    <%= link_to '投稿する', new_restaurant_path, class:"r-new-form-btn" %>
+</div>
 <div class="search-form">
   <%= form_with(url: search_restaurants_path, local: true, method: :get) do |form| %>
   <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
