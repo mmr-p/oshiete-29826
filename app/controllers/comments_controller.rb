@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comments = @restaurant.comments.includes(:user).order('created_at DESC')
-
     if @comment.valid?
       @comment.save
       ActionCable.server.broadcast 'comment_channel', content: @comment, name: @comment.user.name,

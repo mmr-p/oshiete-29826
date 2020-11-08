@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_item
-  before_action :move_to_login
+  before_action :authenticate_user!
 
   def index
     @message = current_user.messages.new
@@ -25,9 +25,5 @@ class MessagesController < ApplicationController
 
   def set_item
     @messages = Message.includes(:user).order('created_at ASC')
-  end
-
-  def move_to_login
-    redirect_to new_user_session_path unless user_signed_in?
   end
 end

@@ -26,6 +26,57 @@
         <%= f.text_field :name, class:"form-space" %>
       </div>
 
+      <%# 評価 %>
+      <div class="form-group" id="taste_star">
+        <%= f.label :taste_rate,'おいしさ ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :taste_rate, id: :review_star %>
+      </div>
+
+      <script>
+        $(document).ready(function() {
+          $('#taste_star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            scoreName: 'restaurant[taste_rate]',
+            half: true,
+          });
+        });
+      </script>  
+
+      <div class="form-group" id="price_star">
+        <%= f.label :price_rate,'値段 ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :price_rate, id: :review_star %>
+      </div>
+
+      <script>
+        $('#price_star').raty({
+          size     : 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          scoreName: 'restaurant[price_rate]',
+          half: true,
+        });
+      </script>  
+
+      <div class="form-group" id="service_star">
+        <%= f.label :service_star,'接客 ', class:'col-md-3 col-form-label' %>
+        <%= f.hidden_field :service_star, id: :review_star %>
+      </div>
+
+      <script>
+        $('#service_star').raty({
+          size     : 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          scoreName: 'restaurant[service_rate]',
+          half: true,
+        });
+      </script>  
+
       <%# カテゴリー %>
       <div class="form-group">
         <div>
@@ -64,18 +115,6 @@
         </div>
         <%= f.text_area :description, class:"form-space-large" %>
       </div>
-
-      <%# タグ タグ機能実装後に追加する！！！！！！！ %>
-      <!--
-      <div class="form-group">
-        <div>
-          <label class="info-text">タグ</label>
-        </div>
-        <%= form_with model:@restaurant, local: true do |f| %>
-          <%= f.text_field :name, class:"form-space", id:'tag_ids',\
-          placeholder: "複数つけるには','で区切ってください。" %>
-        <% end %>
-      </div> -->
 
       <%# 電話番号 %>
       <div class="form-group">

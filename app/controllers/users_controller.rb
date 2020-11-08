@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :move_to_login
+  before_action :authenticate_user!
   before_action :set_user
+
   def show
     @restaurants = current_user.restaurants.order('created_at DESC')
   end
@@ -13,10 +14,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def move_to_login
-    redirect_to new_user_session_path unless user_signed_in?
-  end
 
   def set_user
     @user = current_user

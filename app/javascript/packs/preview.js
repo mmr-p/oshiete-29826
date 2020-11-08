@@ -5,6 +5,7 @@ if (document.URL.match( /users/ ) && document.URL.match( /edit/ )) {
       const imageElement = document.createElement('div');
       const blobImage = document.createElement('img');
       blobImage.setAttribute('class', "edit-prof-img");
+      blobImage.setAttribute('id', "edit_prof_img");
       blobImage.setAttribute('src', blob);
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
