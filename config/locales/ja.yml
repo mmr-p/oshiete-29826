@@ -17,6 +17,12 @@ ja:
         genre_id:               カテゴリー
         ambiance_id:            お店の雰囲気
         price_id:               価格帯
+        webpage:                ホームページ
+        parking:                駐車場
+        others:                 備考
+        taste_rate:             おいしさの評価
+        price_rate:             値段の評価
+        service_rate:           接客の評価
       comment:
         content:                コメント
         user:                   ユーザー

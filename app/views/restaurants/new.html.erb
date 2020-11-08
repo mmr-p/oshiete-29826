@@ -28,14 +28,14 @@
 
       <%# 評価 %>
       <div class="form-group" id="taste_star">
-        <%= f.label :taste_rate,'おいしさ ', class:'col-md-3 col-form-label' %>
+        <%= f.label :taste_rate,'おいしさ', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :taste_rate, id: :review_star %>
       </div>
 
       <script>
         $(document).ready(function() {
           $('#taste_star').raty({
-            size     : 36,
+            size     : 15,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
             starHalf: '<%= asset_path('star-half.png') %>',
@@ -46,13 +46,13 @@
       </script>  
 
       <div class="form-group" id="price_star">
-        <%= f.label :price_rate,'値段 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :price_rate,'値段', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :price_rate, id: :review_star %>
       </div>
 
       <script>
         $('#price_star').raty({
-          size     : 36,
+          size     : 15,
           starOff:  '<%= asset_path('star-off.png') %>',
           starOn : '<%= asset_path('star-on.png') %>',
           starHalf: '<%= asset_path('star-half.png') %>',
@@ -62,13 +62,13 @@
       </script>  
 
       <div class="form-group" id="service_star">
-        <%= f.label :service_star,'接客 ', class:'col-md-3 col-form-label' %>
+        <%= f.label :service_star,'接客', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :service_star, id: :review_star %>
       </div>
 
       <script>
         $('#service_star').raty({
-          size     : 36,
+          size     : 15,
           starOff:  '<%= asset_path('star-off.png') %>',
           starOn : '<%= asset_path('star-on.png') %>',
           starHalf: '<%= asset_path('star-half.png') %>',
@@ -78,7 +78,7 @@
       </script>  
 
       <%# カテゴリー %>
-      <div class="form-group">
+      <div class="form-group genre-form">
         <div>
           <label class="info-text">カテゴリー</label>
         </div>
@@ -149,12 +149,36 @@
         <%= f.text_area :closed, class:"form-space-large" %>
       </div>
 
+      <%# ホームページ %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">ホームページ</label>
+        </div>
+        <%= f.text_area :webpage, class:"form-space" %>
+      </div>
+
+      <%# 駐車場 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">駐車場</label>
+        </div>
+        <%= f.text_area :parking, class:"form-space" %>
+      </div>
+
+      <%# 備考 %>
+      <div class="form-group">
+        <div>
+          <label class="info-text">備考</label>
+        </div>
+        <%= f.text_area :others, class:"form-space-large" %>
+      </div>
+
       <div class="actions">
         <%= f.submit "投稿する", class:"register-btn" %>
       </div>
 
       <div class="actions">
-        <%=link_to 'もどる', root_path, class:"back-btn" %>
+        <%=link_to 'もどる', root_path, class:"notes" %>
       </div>
     <% end %>
   </div>

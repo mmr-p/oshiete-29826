@@ -79,9 +79,9 @@ ActiveRecord::Schema.define(version: 2020_11_04_082148) do
     t.string "webpage"
     t.string "parking"
     t.text "others"
-    t.float "taste_rate"
-    t.float "price_rate"
-    t.float "service_rate"
+    t.float "taste_rate", null: false
+    t.float "price_rate", null: false
+    t.float "service_rate", null: false
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
