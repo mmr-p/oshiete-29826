@@ -10,7 +10,7 @@ require("channels")
 require("../map")
 require("./preview")
 require("../back_to_top")
-require('jquery')
+window.$ = window.jQuery = require('jquery');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

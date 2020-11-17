@@ -24,6 +24,9 @@ class Restaurant < ApplicationRecord
     validates :address
     validates :opening_hour
     validates :closed
+    validates :taste_rate
+    validates :price_rate
+    validates :service_rate
   end
 
   with_options numericality: { other_than: 1, message: 'を選択してください' } do

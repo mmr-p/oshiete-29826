@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_104101) do
+ActiveRecord::Schema.define(version: 2020_11_04_082148) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_104101) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_likes_on_restaurant_id"
+    t.index ["user_id", "restaurant_id"], name: "index_likes_on_user_id_and_restaurant_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -58,16 +59,6 @@ ActiveRecord::Schema.define(version: 2020_10_26_104101) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "restaurant_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "restaurant_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["restaurant_id", "tag_id"], name: "index_restaurant_tag_relations_on_restaurant_id_and_tag_id", unique: true
-    t.index ["restaurant_id"], name: "index_restaurant_tag_relations_on_restaurant_id"
-    t.index ["tag_id"], name: "index_restaurant_tag_relations_on_tag_id"
   end
 
   create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,13 +76,13 @@ ActiveRecord::Schema.define(version: 2020_10_26_104101) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "webpage"
+    t.string "parking"
+    t.text "others"
+    t.float "taste_rate", null: false
+    t.float "price_rate", null: false
+    t.float "service_rate", null: false
     t.index ["user_id"], name: "index_restaurants_on_user_id"
-  end
-
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -116,7 +107,5 @@ ActiveRecord::Schema.define(version: 2020_10_26_104101) do
   add_foreign_key "likes", "restaurants"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "users"
-  add_foreign_key "restaurant_tag_relations", "restaurants"
-  add_foreign_key "restaurant_tag_relations", "tags"
   add_foreign_key "restaurants", "users"
 end

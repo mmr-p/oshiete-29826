@@ -1,13 +1,9 @@
 class RestaurantsController < ApplicationController
-  before_action :move_to_login, except: [:index, :show, :search, :top]
+  before_action :authenticate_user!, except: [:index, :show, :search, :top]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.order('created_at DESC')
-  end
-
-  def ranking
-    @restaurants = Restaurant.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
   end
 
   def new
@@ -54,6 +50,11 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.search(params[:keyword])
   end
 
+
+  def ranking
+    @restaurants = Restaurant.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
+  end
+
   private
 
   def set_restaurant
@@ -61,11 +62,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id,
-                                       :price_id, :tel, :address, :opening_hour, :closed, :image).merge(user_id: current_user.id)
-  end
-
-  def move_to_login
-    redirect_to new_user_session_path unless user_signed_in?
+    params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id, :price_id, :tel, :address, :opening_hour, :closed,
+                                       :image, :webpage, :parking, :others, :taste_rate, :price_rate, :service_rate).merge(user_id: current_user.id)
   end
 end
