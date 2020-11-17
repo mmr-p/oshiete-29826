@@ -27,12 +27,13 @@ if (document.URL.match( /users/ ) && document.URL.match( /edit/ )) {
       const imageElement = document.createElement('div');
       const blobImage = document.createElement('img');
       blobImage.setAttribute('class', "restaurant-img");
+      blobImage.setAttribute('id', "restaurant_img");
       blobImage.setAttribute('src', blob);
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
     };
     document.getElementById('restaurant_image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img');
+      const imageContent = document.getElementById('restaurant_img');
       if (imageContent){
         imageContent.remove();
       }

@@ -41,6 +41,51 @@
           </li>
         </ul>
       </div>
+
+      <div class="show-rates">
+      <%# 味の星評価 %>
+        <div id="taste_star-<%= @restaurant.id %>", class="rate-child">おいしさ：</div>
+          <script>
+          $('#taste_star-<%= @restaurant.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= @restaurant.taste_rate %>
+          });
+          </script>
+
+      <%# 値段の星評価 %>
+        <div id="price_star-<%= @restaurant.id %>", class="rate-child">値段：</div>
+          <script>
+          $('#price_star-<%= @restaurant.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= @restaurant.price_rate %>
+          });
+          </script>
+
+      <%# 接客の星評価 %>
+        <div id="service_star-<%= @restaurant.id %>", class="rate-child">接客：</div>
+          <script>
+          $('#service_star-<%= @restaurant.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= @restaurant.service_rate %>
+          });
+          </script>  
+        </div>
+
       <div class="show-main-body">
         <%= link_to @restaurant.image, "data-lightbox" => @restaurant.image do %>
           <%= image_tag @restaurant.image.variant(resize: '600x600'), class:"show-image" %>
@@ -81,13 +126,13 @@
             <th class="genre-tel">電話番号</th><td><%= @restaurant.tel %></td>
           </tr>
           <tr>
-            <th class="genre-web">ホームページ</th><td><%# ホームページ情報（任意）を追加したら実装する %></td>
+            <th class="genre-web">ホームページ</th><td><%= @restaurant.webpage %></td>
           </tr>
           <tr>
-            <th class="genre-parking">駐車場</th><td><%# 駐車場情報（任意）を追加したら実装する %></td>
+            <th class="genre-parking">駐車場</th><td><%= @restaurant.parking %></td>
           </tr>
           <tr>
-            <th class="genre-others">備考</th><td><%# 備考情報（任意）を追加したら実装する %></td>
+            <th class="genre-others">備考</th><td><%= @restaurant.others %></td>
           </tr>
           </div>
         </table>
