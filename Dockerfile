@@ -1,10 +1,10 @@
-FROM ruby:2.6.5 
+FROM ruby:2.6.5
 
-RUN apt update && apt install -y --no-install-recommends\
+RUN apt-get update && apt-get install -y --no-install-recommends\
     nodejs  \
     mariadb-client  \
     build-essential  \
-    && apt clean \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /myproject
 
