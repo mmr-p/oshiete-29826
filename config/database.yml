@@ -15,11 +15,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  socket: /tmp/mysql.sock
+  host: db
 
 development:
   <<: *default
-  host: db
   database: oshiete_29826_development
 
 # Warning: The database defined as "test" will be erased and
