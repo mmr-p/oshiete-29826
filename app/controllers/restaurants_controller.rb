@@ -50,7 +50,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.search(params[:keyword])
   end
 
-
   def ranking
     @restaurants = Restaurant.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
   end
@@ -62,7 +61,8 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id, :price_id, :tel, :address, :opening_hour, :closed,
-                                       :image, :webpage, :parking, :others, :taste_rate, :price_rate, :service_rate).merge(user_id: current_user.id)
+    params.require(:restaurant).permit(:name, :description, :genre_id, :ambiance_id, :price_id, :tel, :address, :opening_hour,
+                                       :closed, :image, :webpage, :parking, :others, :taste_rate, :price_rate, :service_rate)
+          .merge(user_id: current_user.id)
   end
 end
