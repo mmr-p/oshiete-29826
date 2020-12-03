@@ -7,8 +7,6 @@ class Restaurant < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments,                  dependent: :destroy
-  has_many         :restaurant_tag_relations,  dependent: :destroy
-  has_many         :tags,                      through: :restaurant_tag_relations
   has_many         :likes,                     dependent: :destroy
   has_many         :liked_users,               through: :likes, source: :user
 

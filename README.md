@@ -67,8 +67,6 @@ Things you may want to cover:
 - has_many :comments
 - has_many :likes
 - has_many :liked_users, through: :likes
-- has_many :restaurant_tag_relations
-- has_many :tags, through: :restaurant_tag_relations
 
 ## commentsテーブル
 
@@ -94,28 +92,6 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## tagsテーブル
-
-| Column         | Type      | Options                        |
-| -------------- | --------- | ------------------------------ |
-| name           | string    | null: false, uniqueness: true  |
-
-## Association
-
-- has_many :restaurant_tag_relations
-- has_many :restaurants, through: :restaurant_tag_relations
-
-## restaurant_tag_relationsテーブル
-
-| Column         | Type      | Options                        |
-| -------------- | --------- | ------------------------------ |
-| tag            | reference | null: false, foreign_key: true |
-| restaurant     | reference | null: false, foreign_key: true |
-
-## Association
-
-- belongs_to :tag
-- belongs_to :restaurant
 
 ## likesテーブル
 
