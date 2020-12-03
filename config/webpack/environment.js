@@ -9,6 +9,7 @@ environment.plugins.prepend('Provide',
   })
 )
 
+let webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
   new webpack.ProvidePlugin({
