@@ -1,5 +1,5 @@
 const { environment } = require('@rails/webpacker')
-const webpack = require('webpack')
+let webpack = require('webpack')
 
 environment.plugins.prepend('Provide',
   new webpack.ProvidePlugin({
@@ -9,7 +9,6 @@ environment.plugins.prepend('Provide',
   })
 )
 
-const webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
   new webpack.ProvidePlugin({
