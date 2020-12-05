@@ -36,6 +36,13 @@ html {
 
 body {
   margin: 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 /**

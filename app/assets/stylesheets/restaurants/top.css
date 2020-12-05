@@ -1,35 +1,182 @@
-.index-main {
-  background-color: #fef4f4;
-  padding-top: 5px;
+/* PCメニュー非表示 */
+@media screen and (max-width: 600px) {
+  .pc-menu {
+    display: none;
+  }
+}
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background: rgba(0, 0, 0, .8);
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
-.top-image {
+.hamburger-menu ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.hamburger-menu li {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+}
+.hamburger-menu li span {
+  font-size: 16px;
+  color: #fff;
+}
+.hamburger-menu li a, .hamburger-menu li span {
+  display: block;
+  padding: 20px 0;
+}
+
+
+.hamburger-menu .close {
+  position: relative;
+  padding-left: 20px;
+}
+
+.hamburger-menu .close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: #fff;
+  transform: rotate( 45deg );
+}
+
+.hamburger-menu .close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: #fff;
+  transform: rotate( -45deg );
+}
+/* ハンバーガーメニューボタン */
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 25px;
+  z-index: 2;
+  top: -50vw;
+  left: 10px;
+  margin: 0 auto 0 0;
+}
+
+.hamburger span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.hamburger::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+.hamburger::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.toggle {
+  transform: translateY( 0 );
+  opacity: 1;
+}
+
+@media screen and (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+}
+/* ここまで */
+
+.top-container {
   width: 100vw;
-  height: 300px;
-  object-fit: contain;
+  min-height: 100vh;
+  background-color: #fef4f4;
 }
 
 .above-main {
   position: relative;
 }
 
-.top-head-image {
-  width: 100vw;
-  height: 650px;
-  object-fit: cover;
-}
-
 .top-head-text {
   color: white;
   opacity: 0.8;
   text-shadow: 0 0 2px #98605e;
-  font-size: 70px;
+  font-size: 4.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
+}
+
+@media screen and (max-width: 900px) {
+  .top-head-text {
+    font-size: 8vw;
+  }
+}
+
+.top-head-image {
+  width: 100vw;
+  object-fit: cover;
+}
+
+.top-middle-image-position {
+  display: flex;
+  justify-content: center;
+}
+
+.top-middle-image {
+  width: 500px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 750px) {
+  .top-middle-image {
+    width: 65vw;
+  }
+}
+
+.index-main {
+  padding-top: 5px;
 }
 
 .back-to-top-btn {
@@ -40,5 +187,16 @@
   color: #fff;
   text-align: center;
   text-decoration: none;
-  padding: 20px 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .back-to-top-btn {
+    padding: 3.5vw;
+  }
+}
+
+.top-image {
+  width: 100vw;
+  object-fit: contain;
 }
