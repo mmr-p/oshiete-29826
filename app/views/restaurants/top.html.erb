@@ -1,10 +1,42 @@
 <%# CSS・・・assets/stylesheets/restaurants/top.css %>
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
+<nav class="hamburger-menu">
+  <ul>
+    <li><%= link_to 'HOME', root_path %></li>
+    <li><%= link_to 'ABOUT', root_path(anchor: 'about') %></li>
+    <li><%= link_to 'HOW TO', root_path(anchor: 'how_to') %></li>
+    <li><%= link_to 'EAT', restaurants_path %></li>
+    <li><%= link_to 'CHAT', messages_path(anchor: 'bottom') %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'マイページ', user_path(current_user) %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <li><%= link_to '新規登録', new_user_registration_path %></li>
+    <% end %>
+    <li class="close"><span>閉じる</span></li>
+  </ul>
+</nav>
 <div class="top-container">
   <div class="above-main">
     <div class="top-head-text">O!SHI-ete</div>
     <%= image_tag 'top-header.jpg', class:"top-head-image" %>
+    <div class="hamburger", id="hamburger">
+      <span></span>
+      <%# ハンバーガーメニューの表示／非表示 %>
+      <script>
+        $(function() {
+          const hum = $('#hamburger, .close')
+          const nav = $('.hamburger-menu')
+          hum.on('click', function(){
+            nav.toggleClass('toggle');
+          });
+        });
+      </script>
+    </div>
   </div>
   <div class="index-main">
     <%# CSS・・・assets/stylesheets/restaurants/about.css %>
