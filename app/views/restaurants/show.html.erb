@@ -1,50 +1,55 @@
 <%# CSS・・・assets/stylesheets/restaurants/show.css %>
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
 
 <div class="restaurant-show-page">
 
   <div class="show-header">
     <p class="show-name"><%= @restaurant.name %></p>
-    <% if user_signed_in? %>
-      <% if current_user.id == @restaurant.user_id || current_user.admin? %>
-        <%= link_to '編集する', edit_restaurant_path(@restaurant.id), class:"s-edit-btn" %>
-        <%= link_to '削除する', restaurant_path(@restaurant.id), method: :delete, class:"s-edit-btn", data: {confirm: "削除しますか？"} %>
+    <div class="show-header-child">
+      <% if user_signed_in? %>
+        <% if current_user.id == @restaurant.user_id || current_user.admin? %>
+          <%= link_to '編集する', edit_restaurant_path(@restaurant.id), class:"s-edit-btn" %>
+          <%= link_to '削除する', restaurant_path(@restaurant.id), method: :delete, class:"s-edit-btn", data: {confirm: "削除しますか？"} %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   <div class="show-child">
     <div class="show-grand-child">
-      <div class="show-list">
-        <ul class="show-sammary">
-          <li class="show-title">
-            ジャンル：
-          </li>
-          <li class="show-content">
-            <%= @restaurant.genre.name %>
-          </li>
-        </ul>
-        <ul class="show-sammary">
-          <li class="show-title">
-            雰囲気：
-          </li>
-          <li class="show-content">
-            <%= @restaurant.ambiance.name %>
-          </li>
-        </ul>
-        <ul class="show-sammary">
-          <li class="show-title">
-            予算：
-          </li>
-          <li class="show-content">
-            <%= @restaurant.price.name %>
-          </li>
-        </ul>
-      </div>
+      <div class="first-grand-child">
+        <div class="show-list">
+          <ul class="show-sammary">
+            <li class="show-title">
+              ジャンル：
+            </li>
+            <li class="show-content">
+              <%= @restaurant.genre.name %>
+            </li>
+          </ul>
+          <ul class="show-sammary">
+            <li class="show-title">
+              雰囲気：
+            </li>
+            <li class="show-content">
+              <%= @restaurant.ambiance.name %>
+            </li>
+          </ul>
+          <ul class="show-sammary">
+            <li class="show-title">
+              予算：
+            </li>
+            <li class="show-content">
+              <%= @restaurant.price.name %>
+            </li>
+          </ul>
+        </div>
 
-      <div class="show-rates">
-      <%# 味の星評価 %>
-        <div id="taste_star-<%= @restaurant.id %>", class="rate-child">おいしさ：</div>
+        <div class="show-rates">
+          <%# 味の星評価 %>
+          <div id="taste_star-<%= @restaurant.id %>", class="rate-child"><div class="rate-child-text">おいしさ：</div></div>
           <script>
           $('#taste_star-<%= @restaurant.id %>').raty({
             size: 36,
@@ -57,8 +62,8 @@
           });
           </script>
 
-      <%# 値段の星評価 %>
-        <div id="price_star-<%= @restaurant.id %>", class="rate-child">値段：</div>
+          <%# 値段の星評価 %>
+          <div id="price_star-<%= @restaurant.id %>", class="rate-child"><div class="rate-child-text">値段：</div></div>
           <script>
           $('#price_star-<%= @restaurant.id %>').raty({
             size: 36,
@@ -71,8 +76,8 @@
           });
           </script>
 
-      <%# 接客の星評価 %>
-        <div id="service_star-<%= @restaurant.id %>", class="rate-child">接客：</div>
+          <%# 接客の星評価 %>
+          <div id="service_star-<%= @restaurant.id %>", class="rate-child"><div class="rate-child-text">接客：</div></div>
           <script>
           $('#service_star-<%= @restaurant.id %>').raty({
             size: 36,
@@ -86,59 +91,59 @@
           </script>  
         </div>
 
-      <div class="show-main-body">
-        <%= link_to @restaurant.image, "data-lightbox" => @restaurant.image do %>
-          <%= image_tag @restaurant.image.variant(resize: '600x600'), class:"show-image" %>
-        <% end %>
-        <p class="show-post-user"><i class="fas fa-user-edit"></i><%= @restaurant.user.name %></p>
-        <div class="show-description"><%= simple_format(h @restaurant.description) %></div>
-        <%# いいねボタン %>
-        <div id="like-btn-<%= @restaurant.id %>", class="like">
-          <%= render 'likes/like', restaurant: @restaurant %>
-        </div>
-
-        <%# 店舗情報エリア %>
-        <table class="info-table">
-          <caption><span class="caption-restaurant-name"><%= "#{@restaurant.name}" %></span>の店舗情報</caption>
-          <div class="table-space">
-          <tr>
-            <th class="genre-table">ジャンル</th><td><%= @restaurant.genre.name %></td>
-          </tr>
-          <tr>
-            <th>雰囲気</th><td><%= @restaurant.ambiance.name %></td>
-          </tr>
-          <tr>
-            <th class="hour-table">営業時間</th><td><%= @restaurant.opening_hour %></td>
-          </tr>
-          <tr>
-            <th class="closed-table">定休日</th><td><%= @restaurant.closed %></td>
-          </tr>
-          <tr>
-            <th class="genre-address">住所</th>
-            <td><%= @restaurant.address %><br>
-                <div class="map" id="map"></div>
-                <%= javascript_tag do %>
-                  window.address = <%= raw @restaurant.address.to_json %>
-                <% end %>
-            </td>
-          </tr>
-          <tr>
-            <th class="genre-tel">電話番号</th><td><%= @restaurant.tel %></td>
-          </tr>
-          <tr>
-            <th class="genre-web">ホームページ</th><td><%= @restaurant.webpage %></td>
-          </tr>
-          <tr>
-            <th class="genre-parking">駐車場</th><td><%= @restaurant.parking %></td>
-          </tr>
-          <tr>
-            <th class="genre-others">備考</th><td><%= @restaurant.others %></td>
-          </tr>
+        <div class="show-main-body">
+          <%= link_to @restaurant.image, "data-lightbox" => @restaurant.image do %>
+            <%= image_tag @restaurant.image.variant(resize: '600x600'), class:"show-image" %>
+          <% end %>
+          <p class="show-post-user"><i class="fas fa-user-edit"></i><%= @restaurant.user.name %></p>
+          <div class="show-description"><%= simple_format(h @restaurant.description) %></div>
+          <%# いいねボタン %>
+          <div id="like-btn-<%= @restaurant.id %>", class="like">
+            <%= render 'likes/like', restaurant: @restaurant %>
           </div>
-        </table>
+
+          <%# 店舗情報エリア %>
+          <table class="info-table">
+            <caption><span class="caption-restaurant-name"><%= "#{@restaurant.name}" %></span>の店舗情報</caption>
+            <div class="table-space">
+            <tr>
+              <th class="genre-table">ジャンル</th><td><%= @restaurant.genre.name %></td>
+            </tr>
+            <tr>
+              <th>雰囲気</th><td><%= @restaurant.ambiance.name %></td>
+            </tr>
+            <tr>
+              <th class="hour-table">営業時間</th><td><%= @restaurant.opening_hour %></td>
+            </tr>
+            <tr>
+              <th class="closed-table">定休日</th><td><%= @restaurant.closed %></td>
+            </tr>
+            <tr>
+              <th class="genre-address">住所</th>
+              <td><%= @restaurant.address %><br>
+                  <div class="map" id="map"></div>
+                  <%= javascript_tag do %>
+                    window.address = <%= raw @restaurant.address.to_json %>
+                  <% end %>
+              </td>
+            </tr>
+            <tr>
+              <th class="genre-tel">電話番号</th><td><%= @restaurant.tel %></td>
+            </tr>
+            <tr>
+              <th class="genre-web">ホームページ</th><td><%= @restaurant.webpage %></td>
+            </tr>
+            <tr>
+              <th class="genre-parking">駐車場</th><td><%= @restaurant.parking %></td>
+            </tr>
+            <tr>
+              <th class="genre-others">備考</th><td><%= @restaurant.others %></td>
+            </tr>
+            </div>
+          </table>
+        </div>
       </div>
     </div>
-
     <div class="show-grand-child">
       <!-- コメント一覧表示 -->
       <ul>
@@ -151,7 +156,7 @@
         <div class="comment-space">
           <p class="posts-label">コメントを投稿する</p>
           <%= form_with url: restaurant_comments_path(@restaurant.id), model: [@restaurant, @comment], class:"comment-form" do |f| %>
-            <%= f.text_area :content, placeholder: "画像は任意で添付できます", class:"comment-field", id:"comment_text" %>
+            <%= f.text_area :content, placeholder: "コメント", class:"comment-field", id:"comment_text" %>
             <%= f.submit "コメントする", class: "comment-btn" %>
           <% end %>
         </div>

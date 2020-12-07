@@ -12,6 +12,12 @@
   background: #f5b2b2;
 }
 
+@media screen and (max-width: 600px) {
+  .like-btn {
+    padding: 10px 15px;
+  }
+}
+
 .like-btn::before {
   position: absolute;
   top: 0;
@@ -28,10 +34,17 @@
 }
 
 .like-text {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
   color: #fff;
   padding-left: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .like-text {
+    font-size: 0.8rem;
+    padding-left: 40px;
+  }
 }
 
 .like-heart {
@@ -60,6 +73,12 @@
   letter-spacing: 0.1em;
   border-radius: 0.5rem;
   background: #f19ca7;
+}
+
+@media screen and (max-width: 600px) {
+  .liked-btn {
+    padding: 10px 15px;
+  }
 }
 
 .liked-btn::before {

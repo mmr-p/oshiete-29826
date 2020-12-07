@@ -22,7 +22,7 @@
 }
 
 .comment-field {
-  width: 900px;
+  width: 75vw;
   font-size: 15px;
   resize: none;
   background-color: #ffffff;
@@ -30,6 +30,14 @@
   margin: 8px 0;
   padding: 16px 16px 8px;
   border-radius:5px;
+}
+
+@media screen and (max-width: 600px) {
+  .comment-field {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    width: 85vw;
+  }
 }
 
 .comment-btn {
