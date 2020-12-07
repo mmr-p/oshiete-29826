@@ -1,18 +1,44 @@
 .restaurant-page {
-  height: calc(100vh - 148px);
+  height: 100vh;
   background-color: #fef4f4;
   display: flex;
   margin-top: 18px;
   padding: 0 50px;
 }
 
+@media screen and (max-width: 1240px) {
+  .restaurant-page {
+    padding: 0;
+    margin-top: 0;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 .left-side-restaurant{
+  width: 25%;
+  height: auto;
+  background-color: #ffffff;
+  margin: 20px 35px;
   padding-top: 30px;
+}
+
+@media screen and (max-width: 1240px) {
+  .left-side-restaurant {
+    display: none;
+  }
 }
 
 .restaurant-new-form {
   text-align: center;
   margin: 60px 0;
+}
+
+@media screen and (max-width: 1240px) {
+  .restaurant-new-form {
+    margin: 60px 0 30px 27px;
+    text-align: start;
+  }
 }
 
 .r-new-form-btn {
@@ -49,11 +75,29 @@
   border-radius: 50%;
 }
 
+@media screen and (max-width: 1240px) {
+  .search-parent {
+    display: flex;
+  }
+}
+
 .search-form {
   height: 50px;
   position:relative;
   max-width:300px;	
   margin-left: 30px;
+}
+
+@media screen and (max-width: 1240px) {
+  .search-form {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .search-form {
+    margin-bottom: 20px;
+  }
 }
 
 .search-input {
@@ -68,6 +112,12 @@
   background:#eee;
 }
 
+@media screen and (max-width: 500px) {
+  .search-input {
+    width:220px;
+  }
+}
+
 .search-btn {
   height:100%;
   width:50px;	
@@ -79,6 +129,12 @@
   border-radius:0 25px 25px 0;
 }
 
+@media screen and (max-width: 500px) {
+  .search-btn {
+    left:170px;
+  }
+}
+
 .fa-search{
   font-size:20px;	
   position:absolute;
@@ -87,11 +143,10 @@
   color:#fff;
 }
 
-.left-side-restaurant {
-  width: 25%;
-  height: auto;
-  background-color: #ffffff;
-  margin: 20px 35px;
+@media screen and (max-width: 500px) {
+  .fa-search {
+    left:183px;	
+  }
 }
 
 .right-side-restaurant {
@@ -101,10 +156,29 @@
   overflow: scroll;
 }
 
+@media screen and (max-width: 1240px) {
+  .right-side-restaurant {
+    width: 100%;
+    overflow: visible;
+  }
+}
+
 .right-side-header {
-  font-size: 30px;
+  font-size: 2.1rem;
   margin: 37px 0 18px;
   color: #98605e;
+}
+
+@media screen and (max-width: 600px) {
+  .right-side-header {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1241px) {
+  .pc-index-hidden {
+    display: none;
+  }
 }
 
 li {
@@ -118,14 +192,27 @@ li {
   display: flex;
 }
 
+@media screen and (max-width: 750px) {
+  .restaurant-lists {
+    margin: 3vw;
+    padding: 15px 20px;
+  }
+}
+
 .restaurant-info {
   margin-left: 30px;
 }
 
 .restaurant-name {
-  font-size: 23px;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 28px;
+}
+
+@media screen and (max-width: 750px) {
+  .restaurant-name {
+    font-size: 1.3rem;
+  }
 }
 
 .restaurant-name:hover {
@@ -138,10 +225,17 @@ li {
   margin-bottom: 5px;
 }
 
-img.restaurant-img {
+.restaurant-img {
   object-fit: cover;
   width: 280px;
   height: 280px;
+}
+
+@media screen and (max-width: 750px) {
+  .restaurant-img {
+    width: 35vw;
+    height: 35vw;
+  }
 }
 
 .index-like {

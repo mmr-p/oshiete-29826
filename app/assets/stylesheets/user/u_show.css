@@ -41,13 +41,6 @@
   text-align:center
 }
 
-.right-side-restaurant {
-  width: 75%;
-  height: 100%;
-  background-color: #fef4f4;
-  overflow: scroll;
-}
-
 .edit-prof-img {
   object-fit: cover;
   width: 300px;
