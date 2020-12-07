@@ -1,5 +1,7 @@
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
 
 <div class="restaurant-page">
 <%# 左のエリア %>
@@ -9,6 +11,10 @@
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
+  <h2 class="right-side-header">『<%= params[:keyword] %>』の検索結果</h2>
+  <div class="pc-index-hidden">
+    <%= render 'shared/index_left' %>
+  </div>
     <%= render 'shared/index_right' %>
   </div>
 </div>
