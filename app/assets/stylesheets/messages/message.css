@@ -30,6 +30,12 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 600px) {
+  .chat-text {
+    padding: 15px 10px;
+  }
+}
+
 .my-messages .chat-text {
   background-color: #fff3b8;
 }

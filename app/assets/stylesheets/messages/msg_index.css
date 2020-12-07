@@ -1,14 +1,24 @@
 .chat-page {
+  min-height: 100vh;
   width: 100vw;
   background-color: #fef4f4;
-  height: calc(100vh - 130px);
+  height: 100vh;
 }
 
 .chat-area-parent {
   height: calc(100% - 20px);
-  margin: 0 200px;
+  margin: 0 15vw;
   border-top: 5px dotted #f19ca7;
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  .chat-area-parent {
+    margin: 5vw 8vw;
+    border: none;
+    padding-top: 2vw;
+    height: calc(100% - 20%);
+  }
 }
 
 .chat-content-area {
@@ -17,16 +27,29 @@
   padding: 0 40px 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .chat-content-area {
+    padding: 0 23px 13px;
+  }
+}
+
 .chat-form-parent {
   height: calc(100% - 90%);
   width: 100%;
   background-color: #fef4f4;
   display: flex;
-  padding: 13px 40px;
+  padding: 13px 2.5vw;
+}
+
+@media screen and (max-width: 600px) {
+  .chat-form-parent {
+    padding-bottom: 0;
+    padding: 13px 2.5vw 0;
+  }
 }
 
 .chat-form-child {
-  width: 870px;
+  width: 60vw;
   resize: none;
   background-color: #ffffff;
   padding: 0.5em 1.5em;
@@ -34,6 +57,11 @@
   border-bottom: solid 2px #f19ca7;
 }
 
+@media screen and (max-width: 600px) {
+  .chat-form-child {
+    width: 70vw;
+  }
+}
 
 .form-message {
   border: none;
@@ -45,10 +73,17 @@
 .snd-mark {
   width: 60px;
   height: 60px;
-  margin-left: 20px;
+  margin-left: 1.3vw;
   background: #98605e;
   color: #ffffff;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .snd-mark {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .fa-paper-plane {
@@ -59,6 +94,14 @@
   letter-spacing: 0;
   padding-left: 13px;
   padding-top: 20%;
+}
+
+@media screen and (max-width: 600px) {
+  .fa-paper-plane {
+    font-size: 140%;
+    padding-left: 11px;
+    padding-top: 23%;
+  }
 }
 
 .snd-mark:hover {

@@ -3,6 +3,7 @@
   <%= render 'shared/header' %>
   <%= render 'shared/second-header' %>
 </div>
+
 <nav class="hamburger-menu">
   <ul>
     <li><%= link_to 'HOME', root_path %></li>
@@ -20,24 +21,27 @@
     <li class="close"><span>閉じる</span></li>
   </ul>
 </nav>
+
 <div class="top-container">
   <div class="above-main">
     <div class="top-head-text">O!SHI-ete</div>
     <%= image_tag 'top-header.jpg', class:"top-head-image" %>
-    <div class="hamburger", id="hamburger">
-      <span></span>
-      <%# ハンバーガーメニューの表示／非表示 %>
-      <script>
-        $(function() {
-          const hum = $('#hamburger, .close')
-          const nav = $('.hamburger-menu')
-          hum.on('click', function(){
-            nav.toggleClass('toggle');
-          });
-        });
-      </script>
-    </div>
   </div>
+  <%# ハンバーガーメニューボタン%>
+  <div class="hamburger-top", id="hamburger">
+    <span></span>
+    <%# ハンバーガーメニューの表示／非表示 %>
+    <script>
+      $(function() {
+        const hum = $('#hamburger, .close')
+        const nav = $('.hamburger-menu')
+        hum.on('click', function(){
+          nav.toggleClass('toggle');
+        });
+      });
+    </script>
+  </div>
+  <%# ハンバーガーここまで %>
   <div class="index-main">
     <%# CSS・・・assets/stylesheets/restaurants/about.css %>
     <div class="about", id="about">
