@@ -8,6 +8,26 @@
   text-align:center;
 }
 
+@media screen and (max-width: 950px) {
+  .post-panel {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-panel {
+    width: 100vw;
+    margin: 0 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .restaurant-post-headline {
+    font-size: 1.5rem;
+  }
+}
+
 .image-form {
   margin: 10px 0 25px;
 }
