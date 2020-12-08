@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:index, :create]
   resources :users, only: [:show, :edit, :update]
+  post '/users/guest_sign_in', to: 'users#test_user'
 end

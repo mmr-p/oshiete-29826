@@ -20,6 +20,7 @@
         <% end %>
         <li class="logout-btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "right-list login-btn" %></li>
       <% else %>
+        <li><%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post, class: "right-list register-btn" %></li>
         <li><%= link_to 'ログイン', new_user_session_path, class: "right-list login-btn" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "right-list register-btn" %></li>
       <% end %>
