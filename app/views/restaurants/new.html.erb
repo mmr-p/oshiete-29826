@@ -3,7 +3,7 @@
   <div class="post-panel">
 
     <%= form_with model: @restaurant, class: 'registration-main', local: true do |f| %>
-      <h1>おいしいを教える</h1>
+      <h1 class="restaurant-post-headline">おいしいを教える</h1>
 
       <%# エラーメッセージ表示 %>
       <%= render "shared/error_messages", model: @restaurant %>
@@ -178,7 +178,7 @@
       </div>
 
       <div class="actions">
-        <%=link_to 'もどる', root_path, class:"notes" %>
+        <%=link_to 'もどる', restaurants_path, class:"notes" %>
       </div>
     <% end %>
   </div>

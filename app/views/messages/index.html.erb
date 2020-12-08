@@ -1,8 +1,11 @@
 <%# CSS・・・assets/stylesheets/messages/msg_index.css %>
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
 
 <div class="chat-page">
+  <%= render 'shared/hamburger' %>
   <div class="chat-area-parent">
     <div class="chat-content-area", id="chat-content-area">
         <%# メッセージ表示エリア %>

@@ -1,6 +1,8 @@
 <%# CSS・・・assets/stylesheets/restaurants/index.css %>
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
 
 <div class="restaurant-page">
 <%# 左のエリア %>
@@ -10,7 +12,11 @@
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
+  <%= render 'shared/hamburger' %>
     <h2 class="right-side-header">カフェ・レストラン一覧</h2>
+    <div class="pc-index-hidden">
+      <%= render 'shared/index_left' %>
+    </div>
     <div class="like-ranks"><%= link_to "新着順", restaurants_path %></div>
     <%= render 'shared/index_right' %>
   </div>
