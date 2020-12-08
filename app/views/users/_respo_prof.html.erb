@@ -1,0 +1,19 @@
+<div class="respo-prof">
+  <div class="respo-prof-left">
+    <% if @user.image.attached?%>
+      <div class="respo-prof-icon"><%= image_tag @user.image, class:"prof-img"%></div>
+    <% else %>
+      <div class="respo-prof-icon"><%= image_tag 'mypage-show.png', class:"prof-img" %></div>
+    <% end %>
+    <%= link_to "プロフィール画像変更", edit_user_path(current_user), class:"notes" %>
+  </div>
+  <div class="respo-prof-right">
+    <div class="respo-prof-name"><%= @user.name %></div>
+    <div class="posts", id="u_posts">
+      <%= link_to "投稿一覧", user_path(current_user, anchor: 'posts') %>
+    </div>
+    <div class="likes", id="u_likes">
+      <%= link_to "いいね一覧", user_path(current_user, anchor: 'likes') %>
+    </div>
+  </div>
+</div>

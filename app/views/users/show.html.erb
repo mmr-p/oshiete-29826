@@ -1,6 +1,8 @@
 <%# CSS・・・assets/stylesheets/user/u_show.css %>
-<%= render 'shared/header' %>
-<%= render 'shared/second-header' %>
+<div class="pc-menu">
+  <%= render 'shared/header' %>
+  <%= render 'shared/second-header' %>
+</div>
 
 <div class="restaurant-page">
 <%# 左のエリア %>
@@ -22,11 +24,13 @@
 
   <%# 右のエリア %>
   <div class="right-side-restaurant">
+    <%= render 'shared/hamburger' %>
+    <%= render 'users/respo_prof' %>
     <div id="posts"></div>
-    <h2 class="right-side-header">マイページ ＞ 投稿一覧</h2>
+    <h2 class="u-right-side-header">マイページ ＞ 投稿一覧</h2>
     <%= render 'shared/index_right' %>
     <div id="likes"></div>
-    <h2 class="right-side-header">マイページ ＞ いいね一覧</h2>
+    <h2 class="u-right-side-header">マイページ ＞ いいね一覧</h2>
     <%= render 'shared/liked_index_right' %>
   </div>
 </div>
