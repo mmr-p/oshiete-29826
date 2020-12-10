@@ -1,3 +1,5 @@
+<img width="1200" alt="Screen Shot 2020-12-10 at 20 21 46" src="https://user-images.githubusercontent.com/70573950/101766415-1ad69a80-3b26-11eb-82ff-1e88aca8da5e.png">
+
 # アプリ概要
 [O!SHI-ete](http://www.oshiete.link/)
 ※簡単ログインからテストユーザーとしてログインしていただけます。
