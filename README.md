@@ -24,7 +24,7 @@
 - チャット機能（非同期通信）
 - マップ表示機能（GoogleMap API）
 - レスポンシブデザイン
-![localhost_3000_(iPhone 6_7_8 Plus)](https://user-images.githubusercontent.com/70573950/101766675-7a34aa80-3b26-11eb-9057-cf789170dc45.png)
+<img width="236" alt="Screen Shot 2020-12-10 at 20 37 21" src="https://user-images.githubusercontent.com/70573950/101767458-9422bd00-3b27-11eb-86a3-521104c4d884.png">
 
 # 技術・環境
 ### フロントエンド
