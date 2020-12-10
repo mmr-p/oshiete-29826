@@ -24,7 +24,7 @@
 - チャット機能（非同期通信）
 - マップ表示機能（GoogleMap API）
 - レスポンシブデザイン
-<img width="236" alt="Screen Shot 2020-12-10 at 20 37 21" src="https://user-images.githubusercontent.com/70573950/101767458-9422bd00-3b27-11eb-86a3-521104c4d884.png">
+<img width="236" alt="Screen Shot 2020-12-10 at 20 37 21" src="https://user-images.githubusercontent.com/70573950/101767458-9422bd00-3b27-11eb-86a3-521104c4d884.png">   <img width="243" alt="Screen Shot 2020-12-10 at 20 37 44" src="https://user-images.githubusercontent.com/70573950/101767462-95ec8080-3b27-11eb-84de-54558bdf6b93.png">
 
 # 技術・環境
 ### フロントエンド
