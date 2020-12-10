@@ -1,27 +1,49 @@
-# README
+# アプリ概要
+[O!SHI-ete](http://www.oshiete.link/)
+※簡単ログインからテストユーザーとしてログインしていただけます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「オイシイを教えあおう」をコンセプトにした宿泊施設従業員向けの飲食店情報共有サービスです。
 
-Things you may want to cover:
+# 作成の背景
+前職でお客様からオススメのレストランを聞かれることが多かったのですが、果たしてベストな回答ができているのか疑問に思ったことが始まりでした。
 
-* Ruby version
+もちろん自分が美味しいと思うレストランをオススメするのですが、自分の味覚とお客様の味覚が同じとは限りません。
+甘党の人が辛党の人にオススメを紹介しても「美味しかったけど、ちょっと違う」ということがあるのではないかと思いました。
+従来のグルメ用口コミサイトも便利ではあるのですが、どうしても「又聞き感」が出てしまいます。
 
-* System dependencies
+そこで、社内で「お客様にオススメするという視点を持った口コミ」を共有できる場があればお客様によりリアルで満足度の高い提案ができるのではないかと考え制作に至りました。
 
-* Configuration
+# 機能一覧
+飲食店情報投稿機能
+コメント機能（非同期通信）
+検索機能
+いいね機能（非同期通信）
+ランキング機能
+チャット機能（非同期通信）
+マップ表示機能（GoogleMap API）
+レスポンシブデザイン
 
-* Database creation
+# 技術・環境
+### フロントエンド
+- HTML
+- CSS
+- JavaScript/ jQuery/ Ajax/ Action Cable
 
-* Database initialization
+### バックエンド
+- Ruby
+- Ruby on Rails
 
-* How to run the test suite
+### インフラ
+- AWS （EC2、S3、Route53）
+- Docker/ Docker-compose
+- MySQL
+- Nginx、 Puma
+- Unicorn
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### テスト
+- Rspec
+- FactoryBot
+- Capybara
 
 # テーブル設計
 
