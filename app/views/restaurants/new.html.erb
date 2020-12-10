@@ -83,7 +83,7 @@
           <label class="info-text">カテゴリー</label>
         </div>
         <div class="select-wrap">
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-genre"}) %>
         </div>
       </div>
 
@@ -93,7 +93,7 @@
           <label class="info-text">お店の雰囲気</label>
         </div>
         <div class="select-wrap">
-          <%= f.collection_select(:ambiance_id, Ambiance.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <%= f.collection_select(:ambiance_id, Ambiance.all, :id, :name, {}, {class:"select-box", id:"item-ambiance"}) %>
         </div>
       </div>
 
@@ -103,7 +103,7 @@
           <label class="info-text">価格帯</label>
         </div>
         <div class="select-wrap">
-          <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-price"}) %>
         </div>
       </div>
 
