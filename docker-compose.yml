@@ -32,7 +32,7 @@ services:
   selenium_chrome:
     image: selenium/standalone-chrome-debug
     logging:
-    driver: none
+      driver: none
 
 volumes:
   mysql-data:
