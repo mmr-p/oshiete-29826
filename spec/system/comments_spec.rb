@@ -17,9 +17,9 @@ RSpec.describe "Comments", type: :system do
       image_path = Rails.root.join('app/assets/images/toppage.jpg')
       attach_file('restaurant_image', image_path)
       fill_in 'restaurant_name', with: @restaurant.name
-      find('#taste_star').find("img[alt='1']").click
-      find('#price_star').find("img[alt='1']").click
-      find('#service_star').find("img[alt='1']").click
+      find('#review_star_taste', visible: false).set(5)
+      find('#review_star_price', visible: false).set(5)
+      find('#review_star_service', visible: false).set(5)
       find('#item-genre').find("option[value='2']").select_option
       find("#item-ambiance").find("option[value='2']").select_option
       find("#item-price").find("option[value='2']").select_option
@@ -30,17 +30,19 @@ RSpec.describe "Comments", type: :system do
       fill_in 'restaurant_closed', with: @restaurant.closed
       find('input[name="commit"]').click
       # 詳細ページに遷移
-      find('.restaurant-img').click
+      find('.restaurant-name').find('a').click
       # コメント入力フォームがあることを確認
+      find('.show-name')
+      show_page_path = current_path
       expect(page).to have_content('コメントを投稿する')
       # コメントを投稿する
       fill_in 'comment[content]', with: @comment.content
-      find('input[name="commit"]').click
       # リロードするとコメントモデルが１上がる（非同期通信のためリロード要）
       expect{
-        visit current_path
+        find('input[name="commit"]').click
       }.to change { Comment.count }.by(1)
       # ページにコメントした内容が存在することを確認
+      visit show_page_path
       expect(page).to have_content(@comment.content)
     end
   end
