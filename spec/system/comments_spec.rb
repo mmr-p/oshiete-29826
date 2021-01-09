@@ -57,9 +57,9 @@ RSpec.describe "Comments", type: :system do
       image_path = Rails.root.join('app/assets/images/toppage.jpg')
       attach_file('restaurant_image', image_path)
       fill_in 'restaurant_name', with: @restaurant.name
-      find('#taste_star').find("img[alt='1']").click
-      find('#price_star').find("img[alt='1']").click
-      find('#service_star').find("img[alt='1']").click
+      find('#review_star_taste', visible: false).set(5)
+      find('#review_star_price', visible: false).set(5)
+      find('#review_star_service', visible: false).set(5)
       find('#item-genre').find("option[value='2']").select_option
       find("#item-ambiance").find("option[value='2']").select_option
       find("#item-price").find("option[value='2']").select_option
@@ -73,7 +73,7 @@ RSpec.describe "Comments", type: :system do
       find('.login-btn').click
       # 詳細ページへ遷移
       visit restaurants_path
-      find('.restaurant-img').click
+      find('.restaurant-name').find('a').click
       # コメントにはログインが必要な旨が表示されていることを確認する
       expect(page).to have_content('コメントの投稿には新規登録/ログインが必要です')
     end
