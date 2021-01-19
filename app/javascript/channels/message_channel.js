@@ -13,7 +13,6 @@ consumer.subscriptions.create("MessageChannel", {
     }
     else {
       const chatContentArea = document.getElementById('chat-content-area');
-      const yourMessages = document.getElementById('your_messages');
       const entireMessage = document.createElement('div');
       entireMessage.setAttribute('class', "your-messages");
       const chatSender = document.createElement('div');
@@ -36,7 +35,6 @@ consumer.subscriptions.create("MessageChannel", {
       chatDate.innerHTML = date;
 
       const fakeChatContentArea = document.getElementById('chat-content-area');
-      const fakeMessages = document.getElementById('your_messages');
       const fakeEntireMessage = document.createElement('div');
       fakeEntireMessage.setAttribute('class', "fake-your-messages");
       const fakeChatSender = document.createElement('div');
@@ -57,5 +55,6 @@ consumer.subscriptions.create("MessageChannel", {
 
       const newChatMessage = document.getElementById('message_text');
       newChatMessage.value='';
+    }
   }
 });
