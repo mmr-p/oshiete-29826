@@ -12,6 +12,7 @@ consumer.subscriptions.create("MessageChannel", {
       alert("コメントが入力されていません");
     }
     else {
+      const chatContentArea = document.getElementById('chat-content-area');
       const yourMessages = document.getElementById('your_messages');
       const entireMessage = document.createElement('div');
       entireMessage.setAttribute('class', "your-messages");
@@ -22,7 +23,7 @@ consumer.subscriptions.create("MessageChannel", {
       const chatDate = document.createElement('div');
       chatDate.setAttribute('class', "chat-date");
   
-      yourMessages.insertBefore(entireMessage, yourMessages.firstElementChild);
+      chatContentArea.insertAdjacentElement('beforeend', entireMessage);
       entireMessage.appendChild(chatSender);
       entireMessage.appendChild(chatText);
       entireMessage.appendChild(chatDate);
@@ -34,6 +35,7 @@ consumer.subscriptions.create("MessageChannel", {
       const date = `${data.time}`;
       chatDate.innerHTML = date;
 
+      const fakeChatContentArea = document.getElementById('chat-content-area');
       const fakeMessages = document.getElementById('your_messages');
       const fakeEntireMessage = document.createElement('div');
       fakeEntireMessage.setAttribute('class', "fake-your-messages");
@@ -44,7 +46,7 @@ consumer.subscriptions.create("MessageChannel", {
       const fakeChatDate = document.createElement('div');
       fakeChatDate.setAttribute('class', "chat-date");
   
-      fakeMessages.insertBefore(fakeEntireMessage, fakeMessages.firstElementChild);
+      fakeChatContentArea.insertAdjacentElement('beforeend', fakeEntireMessage);
       fakeEntireMessage.appendChild(fakeChatSender);
       fakeEntireMessage.appendChild(fakeChatText);
       fakeEntireMessage.appendChild(fakeChatDate);
@@ -55,6 +57,5 @@ consumer.subscriptions.create("MessageChannel", {
 
       const newChatMessage = document.getElementById('message_text');
       newChatMessage.value='';
-    }
   }
 });
